@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/kai/projects/c/flex_and_bison/calculator'
+let g:netrw_dirhist_2='/home/kai/projects/richard_and_lynn/qutas'
+let g:netrw_dirhist_3='/home/kai/projects/richard_and_lynn/qutas/lib'
+let g:netrw_dirhist_4='/home/kai/projects/richard_and_lynn/qutas'
+let g:netrw_dirhist_5='/home/kai/projects/richard_and_lynn/qutas/lib'
