@@ -2,9 +2,9 @@
 require 'irb/completion'
 
 # Enable prompt-less prompts
-IRB.conf[:PROMPT][:XMP][:RETURN] = "\# => %s\n"
-IRB.conf[:PROMPT][:XMP][:PROMPT_I] = ""
-IRB.conf[:PROMPT_MODE] = :XMP
+# IRB.conf[:PROMPT][:XMP][:RETURN] = "\# => %s\n"
+# IRB.conf[:PROMPT][:XMP][:PROMPT_I] = ""
+# IRB.conf[:PROMPT_MODE] = :XMP
 
 # Auto-indentation.
 IRB.conf[:AUTO_INDENT] = true
