@@ -21,7 +21,8 @@ git_bundles = [
   "git://git.wincent.com/command-t.git",
   "git://github.com/kairichard/l9_vim_mirror.git",
   "git://github.com/kairichard/fuzzyfinder_vim_mirror.git",
-  "git://github.com/Raimondi/delimitMate.git"
+  "git://github.com/Raimondi/delimitMate.git",
+  "git://github.com/motemen/git-vim.git"
 ]
 
 
@@ -34,9 +35,14 @@ vim_org_scripts = [
 
 require 'fileutils'
 require 'open-uri'
+require 'ftools'
 
 
 bundles_dir = File.join(File.dirname(__FILE__), "bundle")
+
+if !File.exist? bundles_dir
+	File.mkdir bundles_dir
+end
 
 FileUtils.cd(bundles_dir)
 
