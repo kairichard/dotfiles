@@ -1,4 +1,4 @@
-colorscheme ir_black
+
 filetype off 
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
@@ -18,26 +18,61 @@ set visualbell t_vb=    " turn off erroddr beep/flash
 set nobackup        " do not keep a backup file
 set number          " show line numbers
 set nowrap 			" Do not wrap lines
+
+set incsearch       " inceremental searching
+set cursorline
+
 filetype on         " Enable filetype detection
 filetype indent on  " Enable filetype-specific indenting
 filetype plugin on  " Enable filetype-specific plugins
 
 
 " set statusline+=%{rvm#statusline()}
-
 set statusline=%f%m%w
+
+" Replace <LEADER>
 let mapleader = '_'
+
 " Some remapping/shortcuts 
 nmap <silent> <C-t> :CommandT<CR>
 nmap <silent> <C-f> :FufBuffer<CR>
+nmap <silent> <C-P> :NERDTree<CR>
 
-if has("gui")
+if has("gui_running")
+
+    colorscheme monokai
+
+    " set default size: 90x35
+    set columns=90
+    set lines=35
+    " No menus and no toolbar
+    set guioptions-=m
+    set guioptions-=T
+
+    if has("win32") || has("win64")
+        " exit()
+    elseif has("mac")
+       set guifont=Envy\ Code\ R:h10
+    else
+       set directory=/tmp
+       set guifont=Envy\ Code\ R\ 10
+    endif
+    
+    " Remap ctrl+space for omin-completion
     inoremap <silent> <C-Space> <C-X><C-O>
+
 else 
     if has("unix")
 	    inoremap <silent> <Nul> <C-X><C-O>
     endif
+    if &term == "xterm"
+        colorscheme ir_black
+    end
 endif
+
+" Always set Envy Code Font based on System
+
+
 " Press F4 to toggle highlighting on/off, and show current value.
 noremap <F4> :set hlsearch! hlsearch?<CR>
 
