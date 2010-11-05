@@ -3,6 +3,7 @@ git_bundles = [
   "git://github.com/astashov/vim-ruby-debugger.git",
   "git://github.com/msanders/snipmate.vim.git",
   "git://github.com/scrooloose/nerdtree.git",
+  "git://github.com/scrooloose/nerdcommenter.git",    
   "git://github.com/timcharper/textile.vim.git",
   "git://github.com/tpope/vim-cucumber.git",
   "git://github.com/tpope/vim-fugitive.git",
@@ -18,11 +19,12 @@ git_bundles = [
   "git://github.com/tsaleh/vim-supertab.git",
   "git://github.com/tsaleh/vim-tcomment.git",
   "git://github.com/vim-ruby/vim-ruby.git",
-  "git://git.wincent.com/command-t.git",
   "git://github.com/kairichard/l9_vim_mirror.git",
   "git://github.com/kairichard/fuzzyfinder_vim_mirror.git",
   "git://github.com/Raimondi/delimitMate.git",
-  "git://github.com/motemen/git-vim.git"
+  "git://github.com/motemen/git-vim.git",
+  "git://github.com/mileszs/ack.vim.git",
+  "git://git.wincent.com/command-t.git",
 ]
 
 
@@ -64,8 +66,9 @@ vim_org_scripts.each do |name, script_id, script_type|
     file << open("http://www.vim.org/scripts/download_script.php?src_id=#{script_id}").read
   end
 end
-
-Dir.chdir File.join(File.expand_path(File.dirname(__FILE__)),"command-t") do 	
+puts File.expand_path(File.join(File.dirname(__FILE__),"command-t")) 
+ 
+Dir.chdir File.expand_path(File.join(File.dirname(__FILE__),"command-t")) do 	
 	system("rake make")
 end
 
