@@ -1,4 +1,3 @@
-
 filetype off 
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
@@ -43,14 +42,17 @@ if has("gui_running")
     colorscheme monokai
 
     " set default size: 90x35
-    set columns=90
+    set columns=150
     set lines=35
     " No menus and no toolbar
     set guioptions-=m
     set guioptions-=T
+    " No scrollbar
+    set guioptions+=LlRrb
+    set guioptions-=LlRrb
 
     if has("win32") || has("win64")
-        " exit()
+        " do nothing
     elseif has("mac")
        set guifont=Envy\ Code\ R:h10
     else
@@ -65,9 +67,11 @@ else
     if has("unix")
 	    inoremap <silent> <Nul> <C-X><C-O>
     endif
+
     if &term == "xterm"
         colorscheme ir_black
     end
+
 endif
 
 " Always set Envy Code Font based on System
