@@ -1,6 +1,6 @@
 # Enable tab-completion.
 require 'irb/completion'
-
+# install awesome_print 
 # Enable prompt-less prompts
 # IRB.conf[:PROMPT][:XMP][:RETURN] = "\# => %s\n"
 # IRB.conf[:PROMPT][:XMP][:PROMPT_I] = ""

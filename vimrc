@@ -1,3 +1,6 @@
+" Author: Kai Richard König
+" Website: http://kairichardkoenig.com
+" Inspired by http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 set nocompatible    " use vim defaults
 
 call pathogen#helptags()
@@ -69,7 +72,7 @@ nnoremap k gk
 
 if has("gui_running")
 
-    colorscheme monokai
+    colorscheme mustang 
 
     " set default size: 90x35
     set columns=150

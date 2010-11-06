@@ -1,0 +1,16 @@
+parse_git_branch ()
+{
+    if git rev-parse --git-dir >/dev/null 2>&1 
+    then
+            gitver=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
+            if git diff --quiet 2>/dev/null >&2 
+            then
+                gitver=$gitver
+            else
+                gitver='!'$gitver
+            fi
+    else
+        return 0
+    fi
+    echo '[git:'$gitver']'
+}
