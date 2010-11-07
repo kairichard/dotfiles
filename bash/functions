@@ -5,9 +5,9 @@ parse_git_branch ()
             gitver=$(git branch 2>/dev/null| sed -n '/^\*/s/^\* //p')
             if git diff --quiet 2>/dev/null >&2 
             then
-                gitver=$Green$gitver$NC
+                gitver="$Green$gitver$NC"
             else
-                gitver=$Red'!'$gitver$NC
+                gitver="$Red!$gitver$NC"
             fi
     else
         return 0

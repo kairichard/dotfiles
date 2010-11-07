@@ -1,6 +1,7 @@
+" .vimrc
 " Author: Kai Richard König
 " Website: http://kairichardkoenig.com
-" Inspired by http://stevelosh.com/blog/2010/09/coming-home-to-vim/
+" Inspired by a lot of people
 set nocompatible    " use vim defaults
 
 call pathogen#helptags()
@@ -23,6 +24,7 @@ set noswapfile      " No need to keep a swap file
 set nowrap 			" Do not wrap lines
 set scrolloff=20    " Always keep line visible
 
+
 set hidden          " Lets u open new files with unsaved buffers
 
 set incsearch       " inceremental searching
@@ -39,7 +41,7 @@ let mapleader = '_'
 
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 let g:fuf_buffer_keyDelete = '<C-d>'
-
+let g:ruby_debugger_builtin_sender = 0
 " Some remapping/shortcuts 
 nmap <silent> <C-t> :CommandT<CR>
 nmap <silent> <C-f> :FufBuffer<CR>
@@ -54,7 +56,7 @@ nnoremap <C-S-Down>  <C-w>j
 nnoremap <C-S-Up>    <C-w>k
 nnoremap <C-S-Right> <C-w>l
 
-" Remap ESC since its to far away
+" Remap ESC since its too far away
 inoremap jj <ESC>
 
 " Learn how to not use the freaking arrow keys
