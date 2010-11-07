@@ -5,13 +5,9 @@ source ~/.bash/colors
 source ~/.bash/aliases
 source ~/.bash/functions
 
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
+PLATTFROM=$(uname|tr [:upper:] [:lower:])
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
-
+source ~/.bash/$PLATTFROM
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -43,15 +39,27 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=
     fi
 fi
-
 if [ "$color_prompt" = yes ]; then
-    PS1="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$(parse_git_branch) \[$NC\]\n>> "
+    PS1="$Green\u@\h$NC::$Brown\w$NC\$(scm_ps1)\$(parse_git_branch)\n>> "
 else
     PS1='\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
 
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
 
-# Added by autojump install.sh
-source /etc/profile.d/autojump.bash
+
+if [ -f ~/git/git-completion.bash ]; then
+    . ~/git/git-completion.bash 
+fi
+
+# https://github.com/joelthelion/autojump/wiki/
+if [ -f /etc/profile.d/autojump.bash ]; then
+    . /etc/profile.d/autojump.bash
+fi
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+    # Added by autojump install.sh

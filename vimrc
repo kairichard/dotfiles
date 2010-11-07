@@ -89,7 +89,7 @@ if has("gui_running")
     if has("win32") || has("win64")
         " do nothing
      elseif has("mac")
-       set guifont=Envy\ Code\ R:h10
+       set guifont=Manaco:h12
     else
        set guifont=Envy\ Code\ R\ 10
     endif

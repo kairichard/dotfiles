@@ -1,3 +1,5 @@
-if [ -f ~/.bashrc ]
-    source ~/.bashrc
+#/* vim: set filetype=sh : */ 
+
+if [ -f $HOME/.bashrc ];then
+    . $HOME/.bashrc
 fi
