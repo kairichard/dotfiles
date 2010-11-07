@@ -1,7 +1,21 @@
+#/* vim: set filetype=sh : */ 
+# -------- SYSTEM ---------
 alias can_has='sudo apt-get install'
-alias ls='ls --color=auto'
 alias ll='ls -alF'
+alias l='ls -lah'
 
-# -------- Git ---------
+# -------- RUBY ---------
+alias server='ruby script/server'
+alias irbr='irb -r config/environment'
 
+# -------- SSH ---------
+alias htdev='ssh cs@entwicklung.hightext.de'
+alias cmsp='ssh root@cmsp.hightext.de -i ~/.ssh/hightext_cmsp'
+
+alias burda_mms='ssh koenigk@mms.burdawireless.com -i /Users/kaikonig/.ssh/burda_wireless'
+alias stone='ssh tyrael@stone'
+alias bf='ssh beautyfiles.net@webserver.progra.de'
+
+
+# -------- GIT ---------
 alias gs='git status'

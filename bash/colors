@@ -1,3 +1,4 @@
+#/* vim: set filetype=sh : */ 
 Black="$(tput setaf 0)"
 BlackBG="$(tput setab 0)"
 DarkGrey="$(tput bold ; tput setaf 0)"

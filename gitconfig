@@ -1,3 +1,9 @@
 [user]
 	name = Kai Richard Koenig
 	email = kai.richard.koenig@googlemail.com
+[github]
+	user = kairichard
+	token = 33bbc49853683c2655d7515361161a95
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
