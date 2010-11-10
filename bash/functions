@@ -1,5 +1,5 @@
 #/* vim: set filetype=sh : */ 
-parse_git_branch ()
+git_info_ps1 ()
 {
     if git rev-parse --git-dir >/dev/null 2>&1 
     then
@@ -16,7 +16,8 @@ parse_git_branch ()
     echo "::$Cyan(git:$gitver$Cyan)$NC"
 }
 
-scm_ps1() {
+
+svn_info_ps1() {
     local s=
     if [[ -d ".svn" ]] ; then
         svn=\(svn:$(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )\)

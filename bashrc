@@ -40,7 +40,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 if [ "$color_prompt" = yes ]; then
-    PS1="$Green\u@\h$NC::$Brown\w$NC\$(scm_ps1)\$(parse_git_branch)\n>> "
+    PS1="$Green\u@\h$NC::$Brown\w$NC\$(svn_info_ps1)\$(git_info_ps1)\n>> "
 else
     PS1='\u@\h:\w\$ '
 fi
