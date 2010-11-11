@@ -4,6 +4,8 @@
 #     - gem install test_notifier
 # TODO make this platform independent
 require "test_notifier/runner/autotest"
+TestNotifier.default_notifier = :notify_send
+
 
 Autotest.add_hook(:initialize) {|at|
   at.add_exception %r{^\.git}  # ignore Version Control System
