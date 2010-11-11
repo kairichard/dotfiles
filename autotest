@@ -1,1 +1,6 @@
 require 'redgreen/autotest'
+# OSX - install growl
+# UBU - install libnotifiy-bin
+#     - gem install test_notifier
+# TODO make this platform independent
+require "test_notifier/autotest"
