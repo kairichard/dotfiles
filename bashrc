@@ -1,7 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-source ~/.bash/colors
 source ~/.bash/aliases
 source ~/.bash/functions
 
@@ -31,12 +30,13 @@ force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+    	# We have color support; assume it's compliant with Ecma-48
+	    # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+    	# a case would tend to support setf rather than setaf.)
+	    color_prompt=yes
+        source ~/.bash/colors
     else
-	color_prompt=
+	    color_prompt=
     fi
 fi
 if [ "$color_prompt" = yes ]; then
@@ -62,4 +62,3 @@ if [ -f /etc/profile.d/autojump.bash ]; then
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-    # Added by autojump install.sh
