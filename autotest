@@ -1,0 +1,25 @@
+#require 'redgreen/autotest'
+# OSX - install growl
+# UBU - install libnotifiy-bin
+#     - gem install test_notifier
+# TODO make this platform independent
+require "test_notifier/runner/autotest"
+TestNotifier.default_notifier = :notify_send
+
+
+Autotest.add_hook(:initialize) {|at|
+  at.add_exception %r{^\.git}  # ignore Version Control System
+  at.add_exception %r{^./tmp}  # ignore temp files, lest autotest will run again, and again...
+  #  at.clear_mappings         # take out the default (test/test*rb)
+  at.add_mapping(%r{^lib/.*\.rb$}) {|f, _|
+    Dir['spec/**/*.rb']
+  }
+  nil
+}
+
+Autotest.add_hook :initialize do |autotest|
+  %w{.git .DS_Store ._* vendor}.each { |exception| autotest.add_exception(exception) }
+  false
+end
+
+

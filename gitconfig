@@ -3,7 +3,7 @@
 	email = kai.richard.koenig@googlemail.com
 [github]
 	user = kairichard
-	token = 33bbc49853683c2655d7515361161a95
+	token = 7c5f439ced910ea9741ee27ee3c173b7
 [core]
 	editor = "vim -f"
 	excludesfile = ~/.gitignore
