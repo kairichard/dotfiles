@@ -47,6 +47,8 @@ nmap <silent> <C-t> :CommandT<CR>
 nmap <silent> <C-f> :FufBuffer<CR>
 nmap <silent> <C-P> :NERDTree<CR>
 
+cmap wb Bclose
+
 " Open split windo on jump in it
 nnoremap <leader>v <C-w>v<C-w>l 
 nnoremap <leader>h <C-w>s<C-w>l 
