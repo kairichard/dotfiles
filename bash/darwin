@@ -1,7 +1,7 @@
 #/* vim: set filetype=sh : */ 
 
-export PATH=/opt/depot_tools:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/sbin:$PATH
-
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
 
 _autojump() 

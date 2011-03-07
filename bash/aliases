@@ -1,7 +1,7 @@
 #/* vim: set filetype=sh : */ 
 # -------- SYSTEM ---------
 alias can_has='sudo apt-get install'
-alias ll='ls -al --color=auto'
+alias ll='ls -la'
 alias l='ls -lah'
 
 # -------- RUBY ---------

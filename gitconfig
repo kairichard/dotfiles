@@ -1,9 +1,15 @@
 [user]
-	name = Kai Richard Koenig
-	email = kai.richard.koenig@googlemail.com
+	name = Kai Richard Knnnnnnig
+	email = kai@kairichardkoenig.com
 [github]
 	user = kairichard
 	token = 7c5f439ced910ea9741ee27ee3c173b7
 [core]
 	editor = "vim -f"
 	excludesfile = ~/.gitignore
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
