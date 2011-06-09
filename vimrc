@@ -52,6 +52,7 @@ cmap W w
 " Open split windo on jump in it
 nnoremap <leader>v <C-w>v<C-w>l 
 nnoremap <leader>h <C-w>s<C-w>l 
+
 " Split window navigation
 nnoremap <C-S-Left>  <C-w>h
 nnoremap <C-S-Down>  <C-w>j
@@ -73,6 +74,13 @@ inoremap jj <ESC>
 nnoremap j gj
 nnoremap k gk
 
+" Ignore these filenames during enhanced command line completion.
+set wildignore+=*.aux,*.out,*.toc " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.mov,*.ttf " binary images + movies + fonts
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.pyc " Python byte code
+set wildignore+=*.spl " compiled spelling word lists
+set wildignore+=*.sw? " Vim swap files
 
 if has("gui_running")
 
