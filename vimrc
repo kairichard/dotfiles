@@ -11,7 +11,7 @@ set ls=2            " allways show status line
 
 set tabstop=4       " numbers of spaces of tab character
 set shiftwidth=4    " numbers of spaces to (auto)indent
-set expandtab 		" tab gets expanded to spaces
+set expandtab 		  " tab gets expanded to spaces
 set scrolloff=3     " keep 3 lines when scrolling
 set showcmd         " display incomplete commands
 set hlsearch        " highlight searches
@@ -21,7 +21,7 @@ set visualbell t_vb=    " turn off erroddr beep/flash
 set nobackup        " do not keep a backup file
 set number          " show line numbers
 set noswapfile      " No need to keep a swap file
-set nowrap 			" Do not wrap lines
+set nowrap 			    " Do not wrap lines
 set scrolloff=20    " Always keep line visible
 
 
@@ -39,16 +39,18 @@ set pastetoggle=<F2>    " Turn off that smart ass when pasting large protions of
 " Replace <LEADER>
 let mapleader = '_'
 
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ackprg="ack -H --nocolor --nogroup --column"
 let g:fuf_buffer_keyDelete = '<C-d>'
 let g:ruby_debugger_builtin_sender = 0
+
 " Some remapping/shortcuts 
-nmap <silent> <C-t> :CommandT<CR>
+nmap <silent> tt :CommandT<CR>
 nmap <silent> <C-f> :FufBuffer<CR>
 nmap <silent> <C-P> :NERDTree<CR>
 
 cmap wb Bclose
 cmap W w
+
 " Open split windo on jump in it
 nnoremap <leader>v <C-w>v<C-w>l 
 nnoremap <leader>h <C-w>s<C-w>l 
@@ -131,17 +133,6 @@ hi Search term=reverse
 nnoremap / /\v
 vnoremap / /\v
 
-
- "set statusline=%F%m%r%h%w\ [%{&fileformat}][%Y][%{&fileencoding}]\ [ln=%04l,col=%03v][%p%%]\ [LEN=%L]
- 
- " %1* -> User1's highlight, %2*->User2's highlight
- " =   -> Separation point between left and right aligned items.
- " <   -> Where to truncate line if too long.  Default is at the start.
- "set statusline=%4*%<\ %1*[%F]
- "set statusline+=%4*\ %5*[%{&encoding}, " encoding
- "set statusline+=%{&fileformat}]%m " file format
- "set statusline+=%4*%=\ %6*%y%4*\ %3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>
- 
  """ get from gb website's vimrc""""""""""""""""""""""""""""""""""""""
  function! CurDir()
  let curdir = substitute(getcwd(), $HOME, "~/", "g")
