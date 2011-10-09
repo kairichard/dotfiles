@@ -32,7 +32,6 @@ git_bundles = [
 # Just use *.vim files everything else is gonna fail to install probably
 vim_org_scripts = [
   ["IndexedSearch", "7062",  "plugin"],
-  ["gist",          "12732", "plugin"],
   ["jquery",        "12107", "syntax"],
 ]
 

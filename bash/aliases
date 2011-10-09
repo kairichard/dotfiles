@@ -11,3 +11,6 @@ alias cmsp='ssh root@cmsp.hightext.de -i ~/.ssh/hightext_cmsp'
 # -------- GIT ---------
 alias gs='git status'
 alias ga='git add .'
+
+# -------- APPS ---------
+alias gsd='get-shit-done'

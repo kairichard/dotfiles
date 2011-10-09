@@ -23,12 +23,11 @@ set number          " show line numbers
 set noswapfile      " No need to keep a swap file
 set nowrap 			    " Do not wrap lines
 set scrolloff=20    " Always keep line visible
-
-
 set hidden          " Lets u open new files with unsaved buffers
 
 set incsearch       " inceremental searching
-
+set exrc            " Enable Projectspecific settings
+set secure          " disable shellexcutions
 filetype on         " Enable filetype detection
 filetype indent on  " Enable filetype-specific indenting
 filetype plugin on  " Enable filetype-specific plugins
@@ -87,6 +86,7 @@ set wildignore+=*.sw? " Vim swap files
 if has("gui_running")
 
     colorscheme mustang 
+    set fuopt=maxvert,maxhorz " Use maxinum screen space in fullscreen mode
 
     " set default size: 90x35
     set columns=150

@@ -1,11 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/kai/Documents/business/dotfiles'
-let g:netrw_dirhist_2='/Users/kai/.gem'
-let g:netrw_dirhist_3='/Users/kai/Documents/business/dotfiles'
-let g:netrw_dirhist_4='/Users/kai/Documents/business/clients/michael_leis/code/beautyfiles_de'
-let g:netrw_dirhist_5='/private/var/tmp'
-let g:netrw_dirhist_6='/Users/kai/Documents/business/clients/michael_leis/code/beautyfiles_de'
-let g:netrw_dirhist_7='/Users/kai/.rvm/gems/ruby-1.8.7-p330@beautyfiles/gems/ZenTest-4.4.2/lib'
-let g:netrw_dirhist_8='/Users/kai/Documents/business/clients/app/ib30/trunk/dev'
-let g:netrw_dirhist_9='/Users/kai/Documents/business/clients/michael_leis/code/beautyfiles_de'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/kai/Documents/seminar/thesis'
+let g:netrw_dirhist_2='/Users/kai/Documents/business/clients/michael_leis/code'
+let g:netrw_dirhist_3='/Users/kai/Documents/business/clients/michael_leis/code/rivvax_app'
+let g:netrw_dirhist_4='/Users/kai/Documents/business/clients/hightext_verlag/app/ib30/trunk'
