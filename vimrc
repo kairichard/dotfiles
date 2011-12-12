@@ -45,7 +45,7 @@ let g:ruby_debugger_builtin_sender = 0
 " Some remapping/shortcuts 
 nmap <silent> tt :CommandT<CR>
 nmap <silent> ff :FufBuffer<CR>
-nmap <silent> pp :NERDTree<CR>
+nmap <silent> <C-S-p> :NERDTree<CR>
 nmap <silent> ttf :CommandTFlush<CR>
 cmap wb Bclose
 cmap W w

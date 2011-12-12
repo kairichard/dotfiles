@@ -1,2 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/kai/Documents/business/dotfiles'
+let g:netrw_dirhist_2='/Users/kai/Documents/business/dotfiles/get-shit-done'
+let g:netrw_dirhist_3='/Users/kai/Sites/site/cake'
+let g:netrw_dirhist_4='/Users/kai/Documents/business/clients/michael_leis/code/rivvax_app'
