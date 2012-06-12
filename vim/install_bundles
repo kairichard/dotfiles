@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 git_bundles = [ 
-  "git://github.com/astashov/vim-ruby-debugger.git",
   "git://github.com/scrooloose/nerdtree.git",
   "git://github.com/scrooloose/nerdcommenter.git",    
   "git://github.com/timcharper/textile.vim.git",
@@ -37,8 +36,6 @@ vim_org_scripts = [
 
 require 'fileutils'
 require 'open-uri'
-require 'ftools'
-
 
 bundles_dir = File.join(File.dirname(__FILE__), "bundle")
 
