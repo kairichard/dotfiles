@@ -34,6 +34,8 @@ filetype plugin on  " Enable filetype-specific plugins
 
 
 set pastetoggle=<F2>    " Turn off that smart ass when pasting large protions of text
+" replace Ruby 1.8 hash-syntax with new 1.9 json style
+command! -bar -range=% NotRocket execute '<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/e' . (&gdefault ? '' : 'g')
 
 " Replace <LEADER>
 let mapleader = '_'
