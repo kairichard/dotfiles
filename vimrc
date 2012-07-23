@@ -9,8 +9,8 @@ call pathogen#runtime_append_all_bundles()
 
 set ls=2            " allways show status line
 
-set tabstop=4       " numbers of spaces of tab character
-set shiftwidth=4    " numbers of spaces to (auto)indent
+set tabstop=2       " numbers of spaces of tab character
+set shiftwidth=2    " numbers of spaces to (auto)indent
 set expandtab 		  " tab gets expanded to spaces
 set scrolloff=3     " keep 3 lines when scrolling
 set showcmd         " display incomplete commands
@@ -36,6 +36,10 @@ filetype plugin on  " Enable filetype-specific plugins
 set pastetoggle=<F2>    " Turn off that smart ass when pasting large protions of text
 " replace Ruby 1.8 hash-syntax with new 1.9 json style
 command! -bar -range=% NotRocket execute '<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/e' . (&gdefault ? '' : 'g')
+
+" replace cursors iTerm
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " Replace <LEADER>
 let mapleader = '_'
@@ -77,9 +81,13 @@ inoremap jj <ESC>
 nnoremap j gj
 nnoremap k gk
 
+" Number of lines the list can be high
+let g:CommandTMaxHeight=25
+
+
 " Ignore these filenames during enhanced command line completion.
 set wildignore+=*.aux,*.out,*.toc " LaTeX intermediate files
-set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.mov,*.ttf " binary images + movies + fonts
+set wildignore+=*.jpg,*.jpeg,*.bmp,*.gif,*.png,*.mov,*.ttf " binary images + movies + fonts
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
 set wildignore+=*.pyc " Python byte code
 set wildignore+=*.spl " compiled spelling word lists
