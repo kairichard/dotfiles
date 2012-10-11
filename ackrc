@@ -25,6 +25,8 @@
 --type-set=gettext=.pot,.po
 # add cucumber
 --type-set=cucumber=.feature
+--type-set=boil=.boil
+--type-set=smarty=.tpl
 
 
 # types to ignore by default

@@ -15,7 +15,6 @@ git_bundles = [
   "git://github.com/tsaleh/vim-align.git",
   "git://github.com/tsaleh/vim-shoulda.git",
   "git://github.com/tsaleh/vim-supertab.git",
-  "git://github.com/tomtom/tcomment_vim.git",
   "git://github.com/vim-ruby/vim-ruby.git",
   "git://github.com/kairichard/l9_vim_mirror.git",
   "git://github.com/kairichard/fuzzyfinder_vim_mirror.git",
@@ -25,6 +24,9 @@ git_bundles = [
   "git://github.com/motemen/git-vim.git",
   "git://github.com/mileszs/ack.vim.git",
   "git://git.wincent.com/command-t.git",
+  "git://github.com/scrooloose/syntastic.git",
+  "git://github.com/kien/ctrlp.vim.git",
+  "git://github.com/Shougo/neocomplcache.git"
 ]
 
 
@@ -63,10 +65,5 @@ vim_org_scripts.each do |name, script_id, script_type|
     File.open(local_file, "w") do |file|
         file << open("http://www.vim.org/scripts/download_script.php?src_id=#{script_id}").read
     end
-end
-
-Dir.chdir File.expand_path(File.join(File.dirname(__FILE__),"command-t")) do
-    # Building pluging with the provided rake task
-    system("rake make")
 end
 

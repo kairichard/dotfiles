@@ -47,9 +47,10 @@ let mapleader = '_'
 let g:ackprg="ack -H --nocolor --nogroup --column"
 let g:fuf_buffer_keyDelete = '<C-d>'
 let g:ruby_debugger_builtin_sender = 0
+let g:neocomplcache_enable_at_startup = 1
 
 " Some remapping/shortcuts 
-nmap <silent> tt :CommandT<CR>
+nmap <silent> tt :CtrlP<CR>
 nmap <silent> ff :FufBuffer<CR>
 nmap <silent> <C-S-p> :NERDTree<CR>
 nmap <silent> ttf :CommandTFlush<CR>
@@ -92,6 +93,8 @@ set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
 set wildignore+=*.pyc " Python byte code
 set wildignore+=*.spl " compiled spelling word lists
 set wildignore+=*.sw? " Vim swap files
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 if has("gui_running")
 
