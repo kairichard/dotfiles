@@ -4,8 +4,7 @@
 " Inspired by a lot of people
 set nocompatible    " use vim defaults
 
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 set ls=2            " allways show status line
 
@@ -48,12 +47,14 @@ let g:ackprg="ack -H --nocolor --nogroup --column"
 let g:fuf_buffer_keyDelete = '<C-d>'
 let g:ruby_debugger_builtin_sender = 0
 let g:neocomplcache_enable_at_startup = 1
+let g:ctrlp_map = 'tt'
 
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=2
+let g:syntastic_auto_jump=1
 " Some remapping/shortcuts 
-nmap <silent> tt :CtrlP<CR>
 nmap <silent> ff :FufBuffer<CR>
-nmap <silent> <C-S-p> :NERDTree<CR>
-nmap <silent> ttf :CommandTFlush<CR>
+nnoremap <C-S-p> :NERDTree<CR>
 cmap wb Bclose
 cmap W w
 
@@ -81,10 +82,6 @@ inoremap jj <ESC>
 " inoremap <right> <nop>
 nnoremap j gj
 nnoremap k gk
-
-" Number of lines the list can be high
-let g:CommandTMaxHeight=25
-
 
 " Ignore these filenames during enhanced command line completion.
 set wildignore+=*.aux,*.out,*.toc " LaTeX intermediate files
@@ -120,7 +117,6 @@ if has("gui_running")
     endif
     
     " Remap ctrl+space for omin-completion
-    inoremap <silent> <C-Space> <C-X><C-O>
 
 else 
     if has("unix")
