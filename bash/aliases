@@ -1,9 +1,14 @@
 #/* vim: set filetype=sh : */ 
 # -------- SYSTEM ---------
+alias reload='source ~/.bash_profile && echo "Reloaded ~/.bash_profile"'
 alias can_has='sudo apt-get install'
 alias ll='ls -la'
 alias l='ls -lah'
 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias cd..='cd ..'
 # -------- SSH ---------
 alias htdev='ssh cs@entwicklung.hightext.de'
 alias cmsp='ssh root@cmsp.hightext.de -i ~/.ssh/hightext_cmsp'
@@ -15,3 +20,4 @@ alias ga='git add .'
 # -------- APPS ---------
 alias gsd='get-shit-done'
 alias focus='gsd work'
+alias unfocus='gsd play'

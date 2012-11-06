@@ -29,3 +29,9 @@ if [ -f /opt/local/etc/bash_completion ]; then
     . /opt/local/etc/bash_completion
 fi
 
+alias ql='qlmanage -p 2>/dev/null'
+
+pman(){
+    man -t "${1}" | open -f -a '/Applications/Preview.app'
+}
+

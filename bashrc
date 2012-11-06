@@ -4,6 +4,10 @@
 source ~/.bash/aliases
 source ~/.bash/functions
 
+for file in `ls $HOME/.bash/`; do
+  [[ -f $file ]] && source $file
+done
+
 PLATTFROM=$(uname|tr [:upper:] [:lower:])
 
 source ~/.bash/$PLATTFROM
