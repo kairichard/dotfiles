@@ -26,6 +26,7 @@ git_bundles = [
   "git://git.wincent.com/command-t.git",
   "git://github.com/scrooloose/syntastic.git",
   "git://github.com/kien/ctrlp.vim.git",
+  "https://github.com/Lokaltog/vim-powerline",
   "git://github.com/Shougo/neocomplcache.git"
 ]
 

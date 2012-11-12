@@ -23,7 +23,7 @@ set noswapfile      " No need to keep a swap file
 set nowrap 			    " Do not wrap lines
 set scrolloff=20    " Always keep line visible
 set hidden          " Lets u open new files with unsaved buffers
-
+set cursorline      " Highlight the current line
 set incsearch       " inceremental searching
 set exrc            " Enable Projectspecific settings
 set secure          " disable shellexcutions
@@ -47,11 +47,20 @@ let g:ackprg="ack -H --nocolor --nogroup --column"
 let g:fuf_buffer_keyDelete = '<C-d>'
 let g:ruby_debugger_builtin_sender = 0
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_enable_auto_delimiter = 1
+let g:neocomplcache_max_list = 15
+let g:neocomplcache_auto_completion_start_length = 3
+let g:neocomplcache_force_overwrite_completefunc = 1
 let g:ctrlp_map = 'tt'
 
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=2
-let g:syntastic_auto_jump=1
+let g:syntastic_auto_jump=0
 " Some remapping/shortcuts 
 nmap <silent> ff :FufBuffer<CR>
 nnoremap <C-S-p> :NERDTree<CR>
@@ -95,37 +104,37 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 if has("gui_running")
 
-    colorscheme mustang 
-    set fuopt=maxvert,maxhorz " Use maxinum screen space in fullscreen mode
+  colorscheme mustang 
+  set fuopt=maxvert,maxhorz " Use maxinum screen space in fullscreen mode
 
-    " set default size: 90x35
-    set columns=150
-    set lines=35
-    " No menus and no toolbar
-    set guioptions-=m
-    set guioptions-=T
-    " No scrollbar
-    set guioptions+=LlRrb
-    set guioptions-=LlRrb
+  " set default size: 90x35
+  set columns=150
+  set lines=35
+  " No menus and no toolbar
+  set guioptions-=m
+  set guioptions-=T
+  " No scrollbar
+  set guioptions+=LlRrb
+  set guioptions-=LlRrb
 
-    if has("win32") || has("win64")
-        " do nothing
-     elseif has("mac")
-       set guifont=Manaco:h12
-    else
-       set guifont=Envy\ Code\ R\ 10
-    endif
-    
-    " Remap ctrl+space for omin-completion
+  if has("win32") || has("win64")
+    " do nothing
+  elseif has("mac")
+    set guifont=Manaco:h12
+  else
+    set guifont=Envy\ Code\ R\ 10
+  endif
+
+  " Remap ctrl+space for omin-completion
 
 else 
-    if has("unix")
-	    inoremap <silent> <Nul> <C-X><C-O>
-    endif
+  if has("unix")
+    inoremap <silent> <Nul> <C-X><C-O>
+  endif
 
-    if &term == "xterm"
-        colorscheme ir_black
-    end
+  if &term == "xterm"
+    colorscheme ir_black
+  end
 
 endif
 
@@ -142,22 +151,42 @@ hi Search term=reverse
 nnoremap / /\v
 vnoremap / /\v
 
- """ get from gb website's vimrc""""""""""""""""""""""""""""""""""""""
- function! CurDir()
- let curdir = substitute(getcwd(), $HOME, "~/", "g")
- return curdir
- endfunction
- 
-  set statusline=
-  set statusline+=[%F%M%R%W] "path to the file in the buffer, relative to current directory
-  set statusline+=\::[%{strlen(&ft)?&ft:'none'}, " filetype
-  set statusline+=%{&encoding}, " encoding
-  set statusline+=%{&fileformat}] " file format
-  set statusline+=%<
-  set statusline+=%=
-  set statusline+=\ Line:%l/%L
- """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
- "}}}
+""" get from gb website's vimrc""""""""""""""""""""""""""""""""""""""
+function! CurDir()
+  let curdir = substitute(getcwd(), $HOME, "~/", "g")
+  return curdir
+endfunction
+
+    if has('cmdline_info')
+        set ruler                   " show the ruler
+        set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
+        set showcmd                 " show partial commands in status line and
+                                    " selected characters/lines in visual mode
+    endif
+
+if has('statusline')
+  set laststatus=2
+
+  " Broken down into easily includeable segments
+  set statusline=%<%f\    " Filename
+  set statusline+=%w%h%m%r " Options
+  set statusline+=%{fugitive#statusline()} "  Git Hotness
+  set statusline+=\ [%{&ff}/%Y]            " filetype
+  set statusline+=\ [%{getcwd()}]          " current dir
+  set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
+
+
+"set statusline=
+"set statusline+=[%F%M%R%W] "path to the file in the buffer, relative to current directory
+"set statusline+=\::[%{strlen(&ft)?&ft:'none'}, " filetype
+"set statusline+=%{&encoding}, " encoding
+"set statusline+=%{&fileformat}] " file format
+"set statusline+=%<
+"set statusline+=%=
+"set statusline+=\ Line:%l/%L
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"}}}
 
 
 
