@@ -46,16 +46,34 @@ let mapleader = '_'
 let g:ackprg="ack -H --nocolor --nogroup --column"
 let g:fuf_buffer_keyDelete = '<C-d>'
 let g:ruby_debugger_builtin_sender = 0
+
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_underbar_completion = 0
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_enable_auto_delimiter = 1
-let g:neocomplcache_max_list = 15
+let g:neocomplcache_max_list = 8
 let g:neocomplcache_auto_completion_start_length = 3
 let g:neocomplcache_force_overwrite_completefunc = 1
+let g:neocomplcache_snippets_dir='~/.vim/bundle/snipmate-snippets/snippets'
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
 let g:ctrlp_map = 'tt'
 
 let g:syntastic_auto_loc_list=1
@@ -157,12 +175,12 @@ function! CurDir()
   return curdir
 endfunction
 
-    if has('cmdline_info')
-        set ruler                   " show the ruler
-        set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
-        set showcmd                 " show partial commands in status line and
-                                    " selected characters/lines in visual mode
-    endif
+if has('cmdline_info')
+  set ruler                   " show the ruler
+  set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
+  set showcmd                 " show partial commands in status line and
+  " selected characters/lines in visual mode
+endif
 
 if has('statusline')
   set laststatus=2
