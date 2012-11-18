@@ -66,14 +66,16 @@ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
+" Hide snippet_complete marker.
+"if has('conceal')
+  "set conceallevel=2 concealcursor=i
+"endif
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
+let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
+
 let g:ctrlp_map = 'tt'
 
 let g:syntastic_auto_loc_list=1
