@@ -1,4 +1,2 @@
-/* vim: set filetype=sh : */ 
-export SVN_EDITOR="vim"
-export EDITOR="vim"
-
+#/* vim: set filetype=sh : */ 
+export EDITOR=/usr/bin/vim

@@ -1,4 +1,3 @@
-#/* vim: set filetype=sh : */ 
 # -------- SYSTEM ---------
 alias reload='source ~/.bash_profile && echo "Reloaded ~/.bash_profile"'
 alias can_has='sudo apt-get install'

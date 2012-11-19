@@ -40,7 +40,6 @@ function cs () {
 	echo -n " <`find . -maxdepth 1 -mindepth 1 -type f | wc -l | tr -d '[:space:]'` files>"
 	# count sub-directories
 	echo -n " <`find . -maxdepth 1 -mindepth 1 -type d | wc -l | tr -d '[:space:]'` dirs/>"
-	# count links
 	echo -n " <`find . -maxdepth 1 -mindepth 1 -type l | wc -l | tr -d '[:space:]'` links@>"
 	# total disk space used by this directory and all subdirectories
 	echo " <~`du -sh . 2> /dev/null | cut -f1`>]"

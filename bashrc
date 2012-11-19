@@ -1,16 +1,11 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-source ~/.bash/aliases
-source ~/.bash/functions
 
-for file in `ls $HOME/.bash/`; do
-  [[ -f $file ]] && source $file
-done
 
 PLATTFROM=$(uname|tr [:upper:] [:lower:])
 
-source ~/.bash/$PLATTFROM
+source ~/.bash/plattforms/$PLATTFROM
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -68,3 +63,7 @@ fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+for file in `ls  $HOME/.bash/`; do 
+  [[ -f $HOME/.bash/$file ]] && source $HOME/.bash/$file;
+done
+
