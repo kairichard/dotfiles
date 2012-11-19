@@ -24,7 +24,6 @@ set nowrap 			    " Do not wrap lines
 set scrolloff=20    " Always keep line visible
 set hidden          " Lets u open new files with unsaved buffers
 set cursorline      " Highlight the current line
-set incsearch       " inceremental searching
 set exrc            " Enable Projectspecific settings
 set secure          " disable shellexcutions
 filetype on         " Enable filetype detection
