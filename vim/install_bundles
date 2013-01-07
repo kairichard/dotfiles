@@ -27,7 +27,7 @@ git_bundles = [
   "https://github.com/Lokaltog/vim-powerline",
   "https://github.com/msanders/snipmate.vim.git",
   #"https://github.com/Shougo/neosnippet.git",
-  #"https://github.com/honza/snipmate-snippets.git",
+  "https://github.com/honza/snipmate-snippets.git",
   #"git://github.com/Shougo/neocomplcache.git"
 ]
 

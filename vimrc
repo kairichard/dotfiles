@@ -70,7 +70,7 @@ let g:ruby_debugger_builtin_sender = 0
 "inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 "inoremap <expr><C-y>  neocomplcache#close_popup()
 "inoremap <expr><C-e>  neocomplcache#cancel_popup()
-"let g:neosnippet#snippets_directory='~/.vim/bundle/snipmate-snippets/snippets'
+let g:snippets_dir='~/.vim/bundle/snipmate-snippets/snippets'
 
 let g:ctrlp_map = 'tt'
 
