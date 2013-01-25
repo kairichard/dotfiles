@@ -67,3 +67,6 @@ for file in `ls  $HOME/.bash/`; do
   [[ -f $HOME/.bash/$file ]] && source $HOME/.bash/$file;
 done
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
