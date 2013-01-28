@@ -26,9 +26,14 @@ set hidden          " Lets u open new files with unsaved buffers
 set cursorline      " Highlight the current line
 set exrc            " Enable Projectspecific settings
 set secure          " disable shellexcutions
+
 filetype on         " Enable filetype detection
 filetype indent on  " Enable filetype-specific indenting
 filetype plugin on  " Enable filetype-specific plugins
+
+set listchars=tab:▸\ ,eol:¬
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
 
 
 set pastetoggle=<F2>    " Turn off that smart ass when pasting large protions of text
@@ -82,6 +87,7 @@ nmap <silent> ff :FufBuffer<CR>
 nnoremap <C-S-p> :NERDTree<CR>
 cmap wb Bclose
 cmap W w
+nmap <leader>l :set list!<CR>
 
 " Open split windo on jump in it
 nnoremap <leader>v <C-w>v<C-w>l 
