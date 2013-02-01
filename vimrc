@@ -123,6 +123,8 @@ set wildignore+=*.spl " compiled spelling word lists
 set wildignore+=*.sw? " Vim swap files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+" guess how ignors wildignore
+let NERDTreeIgnore = ['\.pyc$']
 
 if has("gui_running")
 
