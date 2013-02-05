@@ -2,7 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-
 PLATTFROM=$(uname|tr [:upper:] [:lower:])
 
 source ~/.bash/plattforms/$PLATTFROM
@@ -54,19 +53,24 @@ if [ -f ~/git/git-completion.bash ]; then
     . ~/git/git-completion.bash 
 fi
 
-# https://github.com/joelthelion/autojump/wiki/
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
 if [ -f /etc/profile.d/autojump.bash ]; then
     . /etc/profile.d/autojump.bash
 fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
 for file in `ls  $HOME/.bash/`; do 
   [[ -f $HOME/.bash/$file ]] && source $HOME/.bash/$file;
 done
 
+# APPEND PATHS AT THE END
+export PATH="$HOME/.bash/bin:$PATH"
+export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

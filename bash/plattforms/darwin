@@ -1,17 +1,10 @@
 #/* vim: set filetype=sh : */ 
 
-export PATH=/usr/local/bin:/usr/local/sbin:$HOME/.get-shit-done/:$HOME/bin:$PATH
+# These are homebrew specific Paths
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/usr/local/share/python:$PATH
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
 
 [[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
-
-# Get the aliases and functions
-
-if [ -f /opt/local/etc/bash_completion ]; then
-    . /opt/local/etc/bash_completion
-fi
 
 alias ql='qlmanage -p 2>/dev/null'
 
