@@ -1,8 +1,8 @@
 # -------- SYSTEM ---------
 alias reload='source ~/.bash_profile && echo "Reloaded ~/.bash_profile"'
 alias can_has='sudo apt-get install'
-alias ll='ls -la'
-alias l='ls -lah'
+alias ll='ls -laG'
+alias l='ls -lahG'
 # recursive dir listing
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
 
