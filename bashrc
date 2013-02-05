@@ -2,9 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-PLATTFROM=$(uname|tr [:upper:] [:lower:])
+if [ -f $HOME/.bashrc.local ]; then
+    source $HOME/.bashrc.local
+fi
 
-source ~/.bash/plattforms/$PLATTFROM
+PLATTFROM=$(uname|tr [:upper:] [:lower:])
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
@@ -66,6 +68,9 @@ fi
 for file in `ls  $HOME/.bash/`; do 
   [[ -f $HOME/.bash/$file ]] && source $HOME/.bash/$file;
 done
+
+# include plattform specifics at last to give change to override certain things
+source ~/.bash/plattforms/$PLATTFROM
 
 # APPEND PATHS AT THE END
 export PATH="$HOME/.bash/bin:$PATH"
