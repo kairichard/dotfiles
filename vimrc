@@ -155,7 +155,9 @@ else
   if has("unix")
     inoremap <silent> <Nul> <C-X><C-O>
   endif
-
+  
+  colorscheme mustang
+  syntax on
   if &term == "xterm"
     colorscheme ir_black
   end
