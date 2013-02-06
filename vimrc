@@ -54,7 +54,6 @@ let mapleader = '_'
 
 let g:fuf_buffer_keyDelete = '<C-d>'
 let g:ruby_debugger_builtin_sender = 0
-^
 "let g:neocomplcache_enable_at_startup = 1
 "let g:neocomplcache_enable_camel_case_completion = 0
 "let g:neocomplcache_enable_smart_case = 0
