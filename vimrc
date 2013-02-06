@@ -125,6 +125,8 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 " guess how ignors wildignore
 let NERDTreeIgnore = ['\.pyc$']
 
+let g:Powerline_symbols = 'fancy'
+
 if has("gui_running")
 
   colorscheme mustang 
@@ -143,7 +145,7 @@ if has("gui_running")
   if has("win32") || has("win64")
     " do nothing
   elseif has("mac")
-    set guifont=Manaco:h12
+    set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
   else
     set guifont=Envy\ Code\ R\ 10
   endif
