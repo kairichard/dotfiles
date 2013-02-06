@@ -102,16 +102,16 @@ nnoremap <C-S-Right> <C-w>l
 inoremap jj <ESC>
 
 " Learn how to not use the freaking arrow keys
-" nnoremap <up> <nop>
-" nnoremap <down> <nop>
-" nnoremap <left> <nop>
-" nnoremap <right> <nop>
-" inoremap <up> <nop>
-" inoremap <down> <nop>
-" inoremap <left> <nop>
-" inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
+"nnoremap j gj
+"nnoremap k gk
 
 " Ignore these filenames during enhanced command line completion.
 set wildignore+=*.aux,*.out,*.toc " LaTeX intermediate files
@@ -122,14 +122,15 @@ set wildignore+=*.spl " compiled spelling word lists
 set wildignore+=*.sw? " Vim swap files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-" guess how ignors wildignore
+
+" guess who ignors wildignore
 let NERDTreeIgnore = ['\.pyc$']
 
 let g:Powerline_symbols = 'fancy'
 
 if has("gui_running")
 
-  colorscheme mustang 
+  colorscheme tomorrow_night 
   set fuopt=maxvert,maxhorz " Use maxinum screen space in fullscreen mode
 
   " set default size: 90x35
@@ -157,7 +158,7 @@ else
     inoremap <silent> <Nul> <C-X><C-O>
   endif
   
-  colorscheme mustang
+  colorscheme tomorrow_night
   syntax on
   if &term == "xterm"
     colorscheme ir_black
