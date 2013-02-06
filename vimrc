@@ -47,7 +47,6 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " Replace <LEADER>
 let mapleader = '_'
 
-let g:ackprg="ack -H --nocolor --nogroup --column"
 let g:fuf_buffer_keyDelete = '<C-d>'
 let g:ruby_debugger_builtin_sender = 0
 
