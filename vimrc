@@ -40,16 +40,21 @@ set pastetoggle=<F2>    " Turn off that smart ass when pasting large protions of
 " replace Ruby 1.8 hash-syntax with new 1.9 json style
 command! -bar -range=% NotRocket execute '<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/e' . (&gdefault ? '' : 'g')
 
-" replace cursors iTerm
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
+" replace cursors iTerm
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 " Replace <LEADER>
 let mapleader = '_'
 
 let g:fuf_buffer_keyDelete = '<C-d>'
 let g:ruby_debugger_builtin_sender = 0
-
+^
 "let g:neocomplcache_enable_at_startup = 1
 "let g:neocomplcache_enable_camel_case_completion = 0
 "let g:neocomplcache_enable_smart_case = 0
@@ -68,7 +73,7 @@ let g:ruby_debugger_builtin_sender = 0
 
 " Hide snippet_complete marker.
 "if has('conceal')
-  "set conceallevel=2 concealcursor=i
+"set conceallevel=2 concealcursor=i
 "endif
 "inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 "inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
@@ -157,7 +162,7 @@ else
   if has("unix")
     inoremap <silent> <Nul> <C-X><C-O>
   endif
-  
+
   colorscheme tomorrow_night
   syntax on
   if &term == "xterm"
