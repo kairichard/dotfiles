@@ -91,7 +91,9 @@ nnoremap <C-S-p> :NERDTree<CR>
 cmap wb Bclose
 cmap W w
 nmap <leader>l :set list!<CR>
-
+nnoremap <leader>. :CtrlPTag<cr>
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
+nnoremap <leader>d: tag <C-R><C-W><CR>
 " Open split windo on jump in it
 nnoremap <leader>v <C-w>v<C-w>l 
 nnoremap <leader>h <C-w>s<C-w>l 
