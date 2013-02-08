@@ -1,0 +1,1 @@
+cp pbcopy.plist ~/Library/LaunchAgents/pbcopy.plist
