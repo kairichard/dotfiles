@@ -1,3 +1,4 @@
-_ci # comment lines indivdualy
-let bn=expand(%) # expand current path into var
+<leader> ci       # comment lines indivdualy
+let bn=expand(%)  # expand current path into var
 enew | .! <svn log> <C-R>=bn<CR> # create new empty buffer and write to using value from register
+tn || tp          # next or previous tag
