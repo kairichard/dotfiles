@@ -62,8 +62,11 @@ if [ -f /etc/profile.d/autojump.bash ]; then
     . /etc/profile.d/autojump.bash
 fi
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+active_plugins=("rbenv")
 
+for plugin in ${active_plugins[@]}; do 
+  [[ -f $HOME/.bash/plugins/$plugin ]] && source $HOME/.bash/plugins/$plugin;
+done
 
 for file in `ls  $HOME/.bash/`; do 
   [[ -f $HOME/.bash/$file ]] && source $HOME/.bash/$file;
