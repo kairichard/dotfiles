@@ -62,11 +62,6 @@ if [ -f /etc/profile.d/autojump.bash ]; then
     . /etc/profile.d/autojump.bash
 fi
 
-active_plugins=("rbenv")
-
-for plugin in ${active_plugins[@]}; do 
-  [[ -f $HOME/.bash/plugins/$plugin ]] && source $HOME/.bash/plugins/$plugin;
-done
 
 for file in `ls  $HOME/.bash/`; do 
   [[ -f $HOME/.bash/$file ]] && source $HOME/.bash/$file;
@@ -77,8 +72,14 @@ source ~/.bash/plattforms/$PLATTFROM
 
 # APPEND PATHS AT THE END
 export PATH="$HOME/.bash/bin:$PATH"
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+active_plugins=("rbenv")
+
+for plugin in ${active_plugins[@]}; do 
+  [[ -f $HOME/.bash/plugins/$plugin ]] && source $HOME/.bash/plugins/$plugin;
+done
+

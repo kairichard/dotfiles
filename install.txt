@@ -1,1 +1,3 @@
-cp pbcopy.plist ~/Library/LaunchAgents/pbcopy.plist
+cp resources/pbcopy.plist ~/Library/LaunchAgents/pbcopy.plist
+launchctl load ~/Library/LaunchAgents/pbcopy.plist
+echo "RemoteForward 2224 127.0.0.1:2224" >> ~/.ssh/config

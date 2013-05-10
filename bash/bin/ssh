@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# SSH with host name and IP address in background (only in iTerm.app)
+
+# First, check to see if we have the correct terminal!
+if [ "$(tty)" == 'not a tty' ] || [ "$TERM_PROGRAM" != "iTerm.app" ] ; then
+  /usr/bin/ssh "$@"
+  exit $?
+fi
+
+HOSTNAME=`echo $@ | sed -e "s/.*@//" -e "s/ .*//"`
+
+# RESOLVED_HOSTNAME=`nslookup $HOSTNAME|tail -n +4|grep '^Name:'|cut -f2 -d $'\t'`
+# RESOLVED_IP=`nslookup $HOSTNAME|tail -n +4|grep '^Address:'|cut -f2 -d $':'|tail -c +2`
+output=`dscacheutil -q host -a name $HOSTNAME`
+RESOLVED_HOSTNAME=`echo -e "$output"|grep '^name:'|awk '{print $2}'`
+RESOLVED_IP=`echo -e "$output"|grep '^ip_address:'|awk '{print $2}'`
+PROFILE=`cat ~/.iterm_server_profile_map|grep "$RESOLVED_HOSTNAME\|$RESOLVED_IP\|$HOSTNAME"|cut -d':' -f2`
+on_exit () {
+    echo -e "\033]50;SetProfile=Default\a"
+}
+trap on_exit EXIT
+echo -e "Setting Profile to $PROFILE\n\033]50;SetProfile=$PROFILE\a"
+/usr/bin/ssh "$@"
