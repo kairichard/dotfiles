@@ -54,30 +54,11 @@ let mapleader = '_'
 
 let g:fuf_buffer_keyDelete = '<C-d>'
 let g:ruby_debugger_builtin_sender = 0
-"let g:neocomplcache_enable_at_startup = 1
-"let g:neocomplcache_enable_camel_case_completion = 0
-"let g:neocomplcache_enable_smart_case = 0
-"let g:neocomplcache_enable_underbar_completion = 0
-"let g:neocomplcache_min_syntax_length = 3
-"let g:neocomplcache_enable_auto_delimiter = 1
-"let g:neocomplcache_max_list = 5
-"let g:neocomplcache_snippets_dir='~/.vim/bundle/snipmate-snippets/snippets'
-" Plugin key-mappings.
-"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-"smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " Hide snippet_complete marker.
 "if has('conceal')
 "set conceallevel=2 concealcursor=i
 "endif
-"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-"inoremap <expr><C-y>  neocomplcache#close_popup()
-"inoremap <expr><C-e>  neocomplcache#cancel_popup()
 let g:snippets_dir='~/.vim/bundle/snipmate-snippets/snippets'
 
 let g:ctrlp_map = 'tt'
@@ -211,17 +192,14 @@ if has('statusline')
 endif
 
 
-"set statusline=
-"set statusline+=[%F%M%R%W] "path to the file in the buffer, relative to current directory
-"set statusline+=\::[%{strlen(&ft)?&ft:'none'}, " filetype
-"set statusline+=%{&encoding}, " encoding
-"set statusline+=%{&fileformat}] " file format
-"set statusline+=%<
-"set statusline+=%=
-"set statusline+=\ Line:%l/%L
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"}}}
+" Removes trailing spaces
+function! TrimWhiteSpace()
+    %s/\s\+$//e
+endfunction
 
+nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 
-
-
+autocmd FileWritePre    * :call TrimWhiteSpace()
+autocmd FileAppendPre   * :call TrimWhiteSpace()
+autocmd FilterWritePre  * :call TrimWhiteSpace()
+autocmd BufWritePre     * :call TrimWhiteSpace()

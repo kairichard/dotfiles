@@ -15,10 +15,10 @@ HOSTNAME=`echo $@ | sed -e "s/.*@//" -e "s/ .*//"`
 output=`dscacheutil -q host -a name $HOSTNAME`
 RESOLVED_HOSTNAME=`echo -e "$output"|grep '^name:'|awk '{print $2}'`
 RESOLVED_IP=`echo -e "$output"|grep '^ip_address:'|awk '{print $2}'`
-PROFILE=`cat ~/.iterm_server_profile_map|grep "$RESOLVED_HOSTNAME\|$RESOLVED_IP"|cut -d':' -f2`
+PROFILE=`cat ~/.iterm_server_profile_map|grep "$RESOLVED_HOSTNAME\|$RESOLVED_IP\|$HOSTNAME"|cut -d':' -f2`
 on_exit () {
     echo -e "\033]50;SetProfile=Default\a"
 }
 trap on_exit EXIT
-echo -e "\033]50;SetProfile=$PROFILE\a"
+echo -e "Setting Profile to $PROFILE\n\033]50;SetProfile=$PROFILE\a"
 /usr/bin/ssh "$@"
