@@ -52,7 +52,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 if [ -f ~/git/git-completion.bash ]; then
-    . ~/git/git-completion.bash 
+    . ~/git/git-completion.bash
 fi
 
 if [ -f /opt/local/etc/bash_completion ]; then
@@ -65,7 +65,7 @@ fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 
-for file in `ls  $HOME/.bash/`; do 
+for file in `ls  $HOME/.bash/`; do
   [[ -f $HOME/.bash/$file ]] && source $HOME/.bash/$file;
 done
 
@@ -75,7 +75,6 @@ source ~/.bash/plattforms/$PLATTFROM
 # APPEND PATHS AT THE END
 export PATH="$HOME/.bash/bin:$PATH"
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
