@@ -66,7 +66,7 @@ let g:ctrlp_map = 'tt'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=2
 let g:syntastic_auto_jump=0
-" Some remapping/shortcuts 
+" Some remapping/shortcuts
 nmap <silent> ff :FufBuffer<CR>
 nnoremap <C-S-p> :NERDTree<CR>
 cmap wb Bclose
@@ -76,8 +76,8 @@ nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 nnoremap <leader>d: tag <C-R><C-W><CR>
 " Open split windo on jump in it
-nnoremap <leader>v <C-w>v<C-w>l 
-nnoremap <leader>h <C-w>s<C-w>l 
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>h <C-w>s<C-w>l
 
 " Split window navigation
 nnoremap <C-S-Left>  <C-w>h
@@ -117,7 +117,7 @@ let g:Powerline_symbols = 'fancy'
 
 if has("gui_running")
 
-  colorscheme tomorrow_night 
+  colorscheme tomorrow_night
   set fuopt=maxvert,maxhorz " Use maxinum screen space in fullscreen mode
 
   " set default size: 90x35
@@ -140,7 +140,7 @@ if has("gui_running")
 
   " Remap ctrl+space for omin-completion
 
-else 
+else
   if has("unix")
     inoremap <silent> <Nul> <C-X><C-O>
   endif
@@ -155,7 +155,7 @@ endif
 
 
 " Press F4 to toggle highlighting on/off, and show current value.
-noremap <F4> :set hlsearch! hlsearch?<CR>
+nnoremap <leader>sl :set hlsearch! hlsearch?<CR>
 
 " Set Search Highlight to reverse color
 hi Search gui=reverse
