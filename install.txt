@@ -1,7 +1,19 @@
-touch -P .ssh/authorized_keys
-tmux1.8 libevent 2 - i compiled both form source 
-sudo easy_install -U distribute
-sudo easy_install pudb
-mv nerdtree ~nerdtree
-init submodules
-https://github.com/joelthelion/autojump
+on osx:
+	install brew
+all:
+	autojump
+	ssh-keygen
+	install vim
+	install git
+	install tmux > 1.7
+
+	dotfiles:
+		cd ~
+		git clone git@github.com:kairichard/dotfiles.git
+		cd dotfiles
+		git submodule init;
+		git submodule update
+		rake install
+		cd vim; ./install_bundles
+on osx:
+	cd resources; cp *.ttf FONTS_DIR
