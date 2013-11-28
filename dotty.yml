@@ -1,2 +1,3 @@
 ---
-link_file_pattern: "*.link"
+config_files: 
+  - irbrc
