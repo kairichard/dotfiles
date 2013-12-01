@@ -20,5 +20,8 @@ dependencies:
   - tmux
   - ack-grep
   - git
+  - autojump
 postinstall:
   - ~/.vim/install_bundles
+  - darwin:
+    - cp fonts
