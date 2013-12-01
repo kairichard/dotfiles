@@ -1,6 +1,5 @@
 ---
 config_files: 
-  - irbrc
   - arkrc
   - autotest
   - bash
