@@ -16,12 +16,7 @@ config_files:
   - vim
   - vim.keys
   - vimrc
-dependencies:
-  - tmux
-  - ack-grep
-  - git
-  - autojump
-postinstall:
-  - ~/.vim/install_bundles
-  - darwin:
-    - cp fonts
+
+hooks:
+  - postinstall
+  - postupdate
