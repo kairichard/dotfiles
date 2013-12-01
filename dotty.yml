@@ -1,5 +1,5 @@
 ---
-config_files: 
+config_files:
   - arkrc
   - autotest
   - bash
@@ -16,3 +16,9 @@ config_files:
   - vim
   - vim.keys
   - vimrc
+- dependencies:
+  - tmux
+  - ack-grep
+  - git
+- postinstall:
+  - ˜/.vim/install_bundles
