@@ -21,4 +21,4 @@ dependencies:
   - ack-grep
   - git
 postinstall:
-  - ˜/.vim/install_bundles
+  - ~/.vim/install_bundles
