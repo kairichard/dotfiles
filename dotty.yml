@@ -18,5 +18,13 @@ config_files:
   - vimrc
 
 hooks:
-  - postinstall
-  - postupdate
+  install:
+    post:
+      all:
+        - ~/.vim/install_bundles
+      osx:
+        - ~/.hooks/install/post/brew
+        - ~/.hooks/install/post/osx
+  activate:
+  update:
+  delete:
