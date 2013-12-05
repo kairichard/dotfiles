@@ -1,1 +1,23 @@
-echo 'brew'
+#!/usr/bin/env bash
+
+echo 'brewing our machine'
+brew bundle ~/.hooks/install/post/brewfile
+
+
+function installcask() {
+        brew cask install "${@}"
+}
+
+installcask dropbox
+installcask google-chrome
+installcask imagealpha
+installcask imageoptim
+installcask iterm2
+installcask macvim
+installcask adium
+installcask sequel-pro
+installcask the-unarchiver
+installcask tor-browser
+installcask transmission
+installcask virtualbox
+installcask vlc

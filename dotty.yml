@@ -26,6 +26,7 @@ hooks:
       mac:
         - ~/.hooks/install/post/brew
         - ~/.hooks/install/post/osx
+        - ~/.hooks/install/post/osx_resources
   activate:
   update:
   delete:
