@@ -23,7 +23,7 @@ hooks:
     post:
       all:
         - ~/.vim/install_bundles
-      osx:
+      mac:
         - ~/.hooks/install/post/brew
         - ~/.hooks/install/post/osx
   activate:
