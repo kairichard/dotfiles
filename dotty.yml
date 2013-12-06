@@ -24,6 +24,8 @@ osx: &osx
   config_files:
     - *basic
     - iterm_server_profile_map
+    - bootstrap
+
   post:
     install:
       - *vim_bundles
