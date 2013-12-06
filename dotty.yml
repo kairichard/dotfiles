@@ -1,5 +1,5 @@
 ---
-config_files:
+config_files: &basic
   - arkrc
   - autotest
   - bash
@@ -9,24 +9,29 @@ config_files:
   - gitconfig
   - hgrc
   - irbrc
-  - iterm_server_profile_map
   - rspec
   - tmux
   - tmux.conf
   - vim
-  - vim.keys
   - vimrc
   - hooks
 
-hooks:
-  install:
-    post:
-      all:
-        - ~/.vim/install_bundles
-      mac:
-        - ~/.hooks/install/post/brew
-        - ~/.hooks/install/post/osx
-        - ~/.hooks/install/post/osx_resources
-  activate:
-  update:
-  delete:
+post:
+  install: &vim_bundles
+    - ~/.vim/install_bundles
+
+osx: &osx
+  config_files:
+    - *basic
+    - iterm_server_profile_map
+  post:
+    install:
+      - *vim_bundles
+      - ~/.bootstrap/osx/brew
+      - ~/.bootstrap/osx/defaults
+      - ~/.bootstrap/osx/fonts
+
+flavors:
+  - *osx
+
+
