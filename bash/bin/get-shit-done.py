@@ -10,8 +10,8 @@ from os import path
 def exit_error(error):
     print(error, file=sys.stderr)
     exit(1)
-    
-ini_file = path.expanduser(path.join("~", ".get-shit-done.conf"))
+
+ini_file = path.expanduser(path.join("~", ".gsdrc"))
 
 if "linux" in sys.platform:
     restart_network_command = ["/etc/init.d/networking", "restart"]
