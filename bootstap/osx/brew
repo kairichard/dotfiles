@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo 'brewing our machine'
-brew bundle ~/.hooks/install/post/brewfile
+brew bundle ~/.bootstrap/osx/brewfile
 
 
 function installcask() {
