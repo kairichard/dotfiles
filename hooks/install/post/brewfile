@@ -16,6 +16,8 @@ install git
 install tmux
 install vim
 install rbenv
+install ruby-build
+install autojump
 
 tap phinze/homebrew-cask
 install brew-cask
