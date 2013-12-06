@@ -1,21 +1,27 @@
 ---
-config_files: &basic
+base: &basic
   - arkrc
-  - autotest
   - bash
   - bash_profile
   - bashrc
-  - gemrc
-  - gitconfig
-  - hgrc
-  - irbrc
-  - rspec
   - tmux
   - tmux.conf
   - vim
   - vimrc
-  - hooks
+  - bootstrap
+
+desktop: &desktop
   - gsdrc
+
+vcs: &vcs
+  - gitconfig
+  - hgrc
+
+ruby: &ruby
+  - autotest
+  - rspec
+  - gemrc
+  - irbrc
 
 post:
   install: &vim_bundles
@@ -24,8 +30,10 @@ post:
 osx: &osx
   config_files:
     - *basic
+    - *desktop
+    - *vcs
+    - *ruby
     - iterm_server_profile_map
-    - bootstrap
 
   post:
     install:
@@ -34,7 +42,17 @@ osx: &osx
       - ~/.bootstrap/osx/defaults
       - ~/.bootstrap/osx/fonts
 
-flavors:
-  - *osx
+linux: &linux
+  config_files:
+    - *basic
+    - *vcs
+    - *ruby
+  post:
+    install:
+      - *vim_bundles
+      - ~/.bootstrap/linux/debian_pkgs
 
+flavors:
+  osx: *osx
+  linux: *linux
 
