@@ -1,9 +1,6 @@
 [user]
 	name = Kai Richard Koenig
-	email = kai@kairichardkoenig.com
-[github]
-	user = kairichard
-	token = 7c5f439ced910ea9741ee27ee3c173b7
+	email = kai.richard.koenig@googlemail.com
 [core]
 	editor = "/usr/bin/vim -f"
 	excludesfile = ~/.gitignore
@@ -14,7 +11,7 @@
   br = branch
   hist = log --pretty=format:\"%h %ar | %s%d [%an]\" --graph --date=short
   type = cat-file -t
-  dump = cat-file -p  
+  dump = cat-file -p
   l50  = "!f () { git log --abbrev-commit --date=short --pretty=format:'%h%x00%cd%x00%s%x00%an%x00%d' $@ | gawk -F '\\0' '{ printf \"\\033[31m%s\\033[0m \\033[32m%s\\033[0m  %-50s \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, gensub(/(.{49}).{2,}/, \"\\\\1…\",\"g\",$3), $4, $5 }' | less -R; }; f"
   l80  = "!f () { git log --abbrev-commit --date=short --pretty=format:'%h%x00%cd%x00%s%x00%an%x00%d' $@ | gawk -F '\\0' '{ printf \"\\033[31m%s\\033[0m \\033[32m%s\\033[0m  %-80s \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, gensub(/(.{79}).{2,}/, \"\\\\1…\",\"g\",$3), $4, $5 }' | less -R; }; f"
   lg50 = "!f () { git log --graph --color=always --abbrev-commit --date=relative --pretty=format:'%x00%h%x00%s%x00%cd%x00%an%x00%d' $@ | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m %-50s \\033[32m%14s\\033[0m \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, gensub(/(.{49}).{2,}/, \"\\\\1…\",\"g\",$3), $4, $5, $6 }' | less -R; }; f"
@@ -23,7 +20,7 @@
 [color]  # Ensure we get color
   diff   = auto
   branch = auto
-  status = auto  
+  status = auto
 [merge]
 	keepBackup = false;
 	tool = p4merge
