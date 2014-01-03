@@ -39,7 +39,7 @@ osx: &osx
     install:
       - *vim_bundles
       - ~/.bootstrap/osx/brew
-      #- ~/.bootstrap/osx/defaults
+      - ~/.bootstrap/osx/defaults
       - ~/.bootstrap/osx/fonts
     update:
       - *vim_bundles
