@@ -36,20 +36,11 @@ highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
 
-set pastetoggle=<F2>    " Turn off that smart ass when pasting large protions of text
+"set pastetoggle=<F2>    " Turn off that smart ass when pasting large protions of text
 " replace Ruby 1.8 hash-syntax with new 1.9 json style
 command! -bar -range=% NotRocket execute '<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/e' . (&gdefault ? '' : 'g')
 
 
-" replace cursors iTerm
-"if exists('$TMUX')
-  "let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-  "let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-"else
-  "let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-  "let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-"endif
-" Replace <LEADER>
 let mapleader = '_'
 
 let g:fuf_buffer_keyDelete = '<C-d>'
@@ -113,7 +104,7 @@ set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 " guess who ignors wildignore
 let NERDTreeIgnore = ['\.pyc$']
 
-let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'fancy'
 
 if has("gui_running")
 
