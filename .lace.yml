@@ -1,6 +1,6 @@
 ---
 base: &basic
-  - arkrc
+  - ackrc
   - bash
   - bash_profile
   - bashrc
