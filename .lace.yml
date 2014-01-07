@@ -54,6 +54,8 @@ linux: &linux
     install:
       - *vim_bundles
       - ~/.bootstrap/linux/debian_pkgs
+    update:
+      - *vim_bundles
 
 flavors:
   osx: *osx
