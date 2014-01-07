@@ -54,9 +54,10 @@ let g:snippets_dir='~/.vim/bundle/snipmate-snippets/snippets'
 
 let g:ctrlp_map = 'tt'
 
-let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list=0
 let g:syntastic_loc_list_height=2
 let g:syntastic_auto_jump=0
+
 " Some remapping/shortcuts
 nmap <silent> ff :FufBuffer<CR>
 nnoremap <C-S-p> :NERDTree<CR>

@@ -4,3 +4,9 @@
 [submodule "tmux/powerline"]
 	path = tmux/powerline
 	url = https://github.com/erikw/tmux-powerline.git
+[submodule "resources/fonts"]
+	path = resources/fonts
+	url = https://github.com/Lokaltog/powerline-fonts.git
+[submodule "resources/fonts/powerline"]
+	path = resources/fonts/powerline
+	url = https://github.com/Lokaltog/powerline-fonts.git

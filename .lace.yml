@@ -1,0 +1,60 @@
+---
+base: &basic
+  - ackrc
+  - bash
+  - bash_profile
+  - bashrc
+  - tmux
+  - tmux.conf
+  - vim
+  - vimrc
+  - bootstrap
+
+desktop: &desktop
+  - gsdrc
+
+vcs: &vcs
+  - gitconfig
+  - hgrc
+
+ruby: &ruby
+  - autotest
+  - rspec
+  - gemrc
+  - irbrc
+
+post:
+  install: &vim_bundles
+    - ~/.vim/install_bundles
+
+osx: &osx
+  config_files:
+    - *basic
+    - *desktop
+    - *vcs
+    - *ruby
+    - iterm_server_profile_map
+
+  post:
+    install:
+      - *vim_bundles
+      - ~/.bootstrap/osx/brew
+      - ~/.bootstrap/osx/defaults
+      - ~/.bootstrap/osx/fonts
+    update:
+      - *vim_bundles
+      - ~/.bootstrap/osx/brew
+
+linux: &linux
+  config_files:
+    - *basic
+    - *vcs
+    - *ruby
+  post:
+    install:
+      - *vim_bundles
+      - ~/.bootstrap/linux/debian_pkgs
+
+flavors:
+  osx: *osx
+  linux: *linux

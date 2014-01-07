@@ -1,7 +1,0 @@
-touch -P .ssh/authorized_keys
-tmux1.8 libevent 2 - i compiled both form source 
-sudo easy_install -U distribute
-sudo easy_install pudb
-mv nerdtree ~nerdtree
-init submodules
-https://github.com/joelthelion/autojump
