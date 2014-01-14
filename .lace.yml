@@ -25,9 +25,9 @@ ruby: &ruby
   - gemrc
   - irbrc
 
-post:
-  install: &vim_bundles
-    - ~/.vim/install_bundles
+
+vim_bundles: &vim_bundles
+  - ~/.vim/install_bundles
 
 osx: &osx
   config_files:
@@ -37,12 +37,13 @@ osx: &osx
     - *ruby
     - iterm_server_profile_map
 
+  setup:
+    - *vim_bundles
+    - ~/.bootstrap/osx/brew
+    - ~/.bootstrap/osx/defaults
+    - ~/.bootstrap/osx/fonts
+    
   post:
-    install:
-      - *vim_bundles
-      - ~/.bootstrap/osx/brew
-      - ~/.bootstrap/osx/defaults
-      - ~/.bootstrap/osx/fonts
     update:
       - *vim_bundles
       - ~/.bootstrap/osx/brew
@@ -52,10 +53,12 @@ linux: &linux
     - *basic
     - *vcs
     - *ruby
+    
+  setup:
+    - *vim_bundles
+    - ~/.bootstrap/linux/debian_pkgs
+    
   post:
-    install:
-      - *vim_bundles
-      - ~/.bootstrap/linux/debian_pkgs
     update:
       - *vim_bundles
 
