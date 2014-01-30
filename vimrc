@@ -26,6 +26,7 @@ set hidden          " Lets u open new files with unsaved buffers
 set cursorline      " Highlight the current line
 set exrc            " Enable Projectspecific settings
 set secure          " disable shellexcutions
+set history=1000    " Set history size
 
 filetype on         " Enable filetype detection
 filetype indent on  " Enable filetype-specific indenting
