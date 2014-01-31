@@ -1,4 +1,2 @@
-vim/bundle/**/*
 .DS_Store
 .netrwhist
-bash/bin/ppaste

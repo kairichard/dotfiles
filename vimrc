@@ -4,10 +4,57 @@
 " Inspired by a lot of people
 set nocompatible    " use vim defaults
 
-call pathogen#infect()
+if has('vim_starting')
+   set nocompatible               " Be iMproved
+
+  " Required
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+
+" My bundles here:
+"
+" original repos on GitHub
+NeoBundle "scrooloose/nerdtree.git"
+NeoBundle "scrooloose/nerdcommenter.git"
+NeoBundle "scrooloose/syntastic.git"
+NeoBundle "timcharper/textile.vim.git"
+NeoBundle "tpope/vim-cucumber.git"
+NeoBundle "tpope/vim-fugitive.git"
+NeoBundle "tpope/vim-git.git"
+NeoBundle "tpope/vim-haml.git"
+NeoBundle "tpope/vim-markdown.git"
+NeoBundle "tpope/vim-rails.git"
+NeoBundle "tpope/vim-repeat.git"
+NeoBundle "tpope/vim-surround.git"
+NeoBundle "tsaleh/vim-align.git"
+NeoBundle "tsaleh/vim-shoulda.git"
+NeoBundle "tsaleh/vim-supertab.git"
+NeoBundle "vim-ruby/vim-ruby.git"
+NeoBundle "kairichard/l9_vim_mirror.git"
+NeoBundle "kairichard/fuzzyfinder_vim_mirror.git"
+NeoBundle "kairichard/vim_buffer_close.git"
+NeoBundle "Raimondi/delimitMate.git"
+NeoBundle "motemen/git-vim.git"
+NeoBundle "mileszs/ack.vim.git"
+NeoBundle "kien/ctrlp.vim.git"
+NeoBundle "Lokaltog/vim-powerline"
+NeoBundle "msanders/snipmate.vim.git"
+NeoBundle "majutsushi/tagbar"
+NeoBundle "henrik/vim-indexed-search.git"
+
+filetype plugin indent on     " required!
+"
+NeoBundleCheck
 
 set ls=2            " allways show status line
-
 set tabstop=2       " numbers of spaces of tab character
 set shiftwidth=2    " numbers of spaces to (auto)indent
 set expandtab 		  " tab gets expanded to spaces
@@ -16,7 +63,7 @@ set showcmd         " display incomplete commands
 set hlsearch        " highlight searches
 set incsearch       " do incremental searching
 set ruler           " show the cursor position all the time
-set visualbell t_vb=    " turn off erroddr beep/flash
+set visualbell t_vb= " turn off erroddr beep/flash
 set nobackup        " do not keep a backup file
 set number          " show line numbers
 set noswapfile      " No need to keep a swap file
@@ -34,12 +81,6 @@ filetype plugin on  " Enable filetype-specific plugins
 set listchars=tab:▸\ ,eol:¬
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
-
-
-"set pastetoggle=<F2>    " Turn off that smart ass when pasting large protions of text
-" replace Ruby 1.8 hash-syntax with new 1.9 json style
-command! -bar -range=% NotRocket execute '<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/e' . (&gdefault ? '' : 'g')
-
 
 let mapleader = '_'
 
@@ -158,6 +199,7 @@ hi Search term=reverse
 nnoremap / /\v
 vnoremap / /\v
 
+command! -bar -range=% NotRocket execute '<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/e' . (&gdefault ? '' : 'g')
 """ get from gb website's vimrc""""""""""""""""""""""""""""""""""""""
 function! CurDir()
   let curdir = substitute(getcwd(), $HOME, "~/", "g")
