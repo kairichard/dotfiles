@@ -22,33 +22,30 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My bundles here:
 "
 " original repos on GitHub
-NeoBundle "scrooloose/nerdtree.git"
-NeoBundle "scrooloose/nerdcommenter.git"
-NeoBundle "scrooloose/syntastic.git"
-NeoBundle "timcharper/textile.vim.git"
-NeoBundle "tpope/vim-cucumber.git"
-NeoBundle "tpope/vim-fugitive.git"
-NeoBundle "tpope/vim-git.git"
-NeoBundle "tpope/vim-haml.git"
-NeoBundle "tpope/vim-markdown.git"
-NeoBundle "tpope/vim-rails.git"
-NeoBundle "tpope/vim-repeat.git"
-NeoBundle "tpope/vim-surround.git"
-NeoBundle "tsaleh/vim-align.git"
-NeoBundle "tsaleh/vim-shoulda.git"
-NeoBundle "tsaleh/vim-supertab.git"
-NeoBundle "vim-ruby/vim-ruby.git"
-NeoBundle "kairichard/l9_vim_mirror.git"
-NeoBundle "kairichard/fuzzyfinder_vim_mirror.git"
-NeoBundle "kairichard/vim_buffer_close.git"
-NeoBundle "Raimondi/delimitMate.git"
-NeoBundle "motemen/git-vim.git"
-NeoBundle "mileszs/ack.vim.git"
-NeoBundle "kien/ctrlp.vim.git"
-NeoBundle "Lokaltog/vim-powerline"
-NeoBundle "msanders/snipmate.vim.git"
-NeoBundle "majutsushi/tagbar"
-NeoBundle "henrik/vim-indexed-search.git"
+NeoBundle 'scrooloose/nerdtree.git'
+NeoBundle 'scrooloose/nerdcommenter.git'
+NeoBundle 'scrooloose/syntastic.git'
+NeoBundle 'timcharper/textile.vim.git'
+NeoBundle 'tpope/vim-cucumber.git'
+NeoBundle 'tpope/vim-fugitive.git'
+NeoBundle 'tpope/vim-git.git'
+NeoBundle 'tpope/vim-haml.git'
+NeoBundle 'tpope/vim-markdown.git'
+NeoBundle 'tpope/vim-rails.git'
+NeoBundle 'tpope/vim-repeat.git'
+NeoBundle 'tpope/vim-surround.git'
+NeoBundle 'vim-ruby/vim-ruby.git'
+NeoBundle 'kairichard/l9_vim_mirror.git'
+NeoBundle 'kairichard/fuzzyfinder_vim_mirror.git'
+NeoBundle 'kairichard/vim_buffer_close.git'
+NeoBundle 'Raimondi/delimitMate.git'
+NeoBundle 'mileszs/ack.vim.git'
+NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'majutsushi/tagbar'
+NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'henrik/vim-indexed-search.git'
+NeoBundle 'mhinz/vim-signify'
 
 filetype plugin indent on     " required!
 "
