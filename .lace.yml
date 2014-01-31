@@ -10,7 +10,6 @@ base: &basic
   - tmux.conf
   - vim
   - vimrc
-  - bootstrap
 
 desktop: &desktop
   - gsdrc
@@ -27,7 +26,7 @@ ruby: &ruby
 
 post:
   install: &vim_bundles
-    - ~/.vim/install_bundles
+    - <%= @package_path/"vim/install_bundles" %>
 
 osx: &osx
   config_files:
@@ -40,12 +39,12 @@ osx: &osx
   post:
     install:
       - *vim_bundles
-      - ~/.bootstrap/osx/brew
-      - ~/.bootstrap/osx/defaults
-      - ~/.bootstrap/osx/fonts
+      - <%= @package_path/"bootstrap/osx/brew" %>
+      - <%= @package_path/"bootstrap/osx/defaults" %>
+      - <%= @package_path/"bootstrap/osx/fonts" %>
     update:
       - *vim_bundles
-      - ~/.bootstrap/osx/brew
+      - <%= @package_path/"bootstrap/osx/brew" %>
 
 linux: &linux
   config_files:
@@ -55,7 +54,7 @@ linux: &linux
   post:
     install:
       - *vim_bundles
-      - ~/.bootstrap/linux/debian_pkgs
+      - <%= @package_path/"bootstrap/linux/debian_pkgs" %>
     update:
       - *vim_bundles
 
