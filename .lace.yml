@@ -44,7 +44,6 @@ linux: &linux
     - *ruby
 
   setup:
-    - *vim_bundles
     - <%= @package_path/"bootstrap/linux/debian_pkgs" %>
 
 flavors:
