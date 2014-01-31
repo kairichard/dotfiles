@@ -42,6 +42,7 @@ NeoBundle 'Raimondi/delimitMate.git'
 NeoBundle 'mileszs/ack.vim.git'
 NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'henrik/vim-indexed-search.git'
@@ -70,6 +71,7 @@ set hidden          " Lets u open new files with unsaved buffers
 set cursorline      " Highlight the current line
 set exrc            " Enable Projectspecific settings
 set secure          " disable shellexcutions
+set history=1000    " Set history size
 
 filetype on         " Enable filetype detection
 filetype indent on  " Enable filetype-specific indenting

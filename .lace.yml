@@ -24,10 +24,6 @@ ruby: &ruby
   - gemrc
   - irbrc
 
-post:
-  install: &vim_bundles
-    - <%= @package_path/"vim/install_bundles" %>
-
 osx: &osx
   config_files:
     - *basic
@@ -36,27 +32,20 @@ osx: &osx
     - *ruby
     - iterm_server_profile_map
 
-  post:
-    install:
-      - *vim_bundles
-      - <%= @package_path/"bootstrap/osx/brew" %>
-      - <%= @package_path/"bootstrap/osx/defaults" %>
-      - <%= @package_path/"bootstrap/osx/fonts" %>
-    update:
-      - *vim_bundles
-      - <%= @package_path/"bootstrap/osx/brew" %>
+  setup:
+    - <%= @package_path/"bootstrap/osx/brew" %>
+    - <%= @package_path/"bootstrap/osx/defaults" %>
+    - <%= @package_path/"bootstrap/osx/fonts" %>
 
 linux: &linux
   config_files:
     - *basic
     - *vcs
     - *ruby
-  post:
-    install:
-      - *vim_bundles
-      - <%= @package_path/"bootstrap/linux/debian_pkgs" %>
-    update:
-      - *vim_bundles
+
+  setup:
+    - *vim_bundles
+    - <%= @package_path/"bootstrap/linux/debian_pkgs" %>
 
 flavors:
   osx: *osx
