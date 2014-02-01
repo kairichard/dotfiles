@@ -53,6 +53,7 @@ filetype plugin indent on     " required!
 "
 NeoBundleCheck
 
+
 set ls=2            " allways show status line
 set tabstop=2       " numbers of spaces of tab character
 set shiftwidth=2    " numbers of spaces to (auto)indent
@@ -74,6 +75,17 @@ set exrc            " Enable Projectspecific settings
 set secure          " disable shellexcutions
 set history=1000    " Set history size
 
+" Ignore these filenames during enhanced command line completion.
+set wildignore+=*.aux,*.out,*.toc " LaTeX intermediate files
+set wildignore+=*.jpg,*.jpeg,*.bmp,*.gif,*.png,*.mov,*.ttf " binary images + movies + fonts
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.pyc " Python byte code
+set wildignore+=*.spl " compiled spelling word lists
+set wildignore+=*.sw? " Vim swap files
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+
+
 filetype on         " Enable filetype detection
 filetype indent on  " Enable filetype-specific indenting
 filetype plugin on  " Enable filetype-specific plugins
@@ -81,6 +93,7 @@ filetype plugin on  " Enable filetype-specific plugins
 set listchars=tab:▸\ ,eol:¬
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
+
 
 let mapleader = '_'
 
@@ -91,7 +104,6 @@ let g:ruby_debugger_builtin_sender = 0
 "if has('conceal')
 "set conceallevel=2 concealcursor=i
 "endif
-let g:snippets_dir='~/.vim/bundle/snipmate-snippets/snippets'
 
 let g:ctrlp_map = 'tt'
 
@@ -99,18 +111,36 @@ let g:syntastic_auto_loc_list=0
 let g:syntastic_loc_list_height=2
 let g:syntastic_auto_jump=0
 
+" pymode config
+let g:pymode = 0
+let g:pymode_options = 0
+let g:pymode_folding = 0
+let g:pymode_motion = 1
+let g:pymode_virtualenv = 0
+let g:pymode_run = 1
+let g:pymode_breakpoint = 1
+let g:pymode_lint = 0
+let g:pymode_rope = 1
+let g:pymode_rope_completion = 0
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_goto_definition_cmd = 'e'
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+
 " Some remapping/shortcuts
 nmap <silent> ff :FufBuffer<CR>
-nnoremap <C-S-p> :NERDTree<CR>
-cmap wb Bclose
-cmap W w
 nmap <leader>l :set list!<CR>
+nnoremap <C-S-p> :NERDTree<CR>
+nnoremap <leader>sl :set hlsearch! hlsearch?<CR>
 nnoremap <leader>. :CtrlPTag<cr>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 nnoremap <leader>d: tag <C-R><C-W><CR>
 " Open split windo on jump in it
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>l
+
+cmap wb Bclose
+cmap W w
 
 " Split window navigation
 nnoremap <C-S-Left>  <C-w>h
@@ -132,16 +162,6 @@ inoremap jj <ESC>
 "inoremap <right> <nop>
 "nnoremap j gj
 "nnoremap k gk
-
-" Ignore these filenames during enhanced command line completion.
-set wildignore+=*.aux,*.out,*.toc " LaTeX intermediate files
-set wildignore+=*.jpg,*.jpeg,*.bmp,*.gif,*.png,*.mov,*.ttf " binary images + movies + fonts
-set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
-set wildignore+=*.pyc " Python byte code
-set wildignore+=*.spl " compiled spelling word lists
-set wildignore+=*.sw? " Vim swap files
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
 " guess who ignors wildignore
 let NERDTreeIgnore = ['\.pyc$']
@@ -170,9 +190,6 @@ if has("gui_running")
   else
     set guifont=Envy\ Code\ R\ 10
   endif
-
-  " Remap ctrl+space for omin-completion
-
 else
   if has("unix")
     inoremap <silent> <Nul> <C-X><C-O>
@@ -183,12 +200,9 @@ else
   if &term == "xterm"
     colorscheme ir_black
   end
-
 endif
 
 
-" Press F4 to toggle highlighting on/off, and show current value.
-nnoremap <leader>sl :set hlsearch! hlsearch?<CR>
 
 " Set Search Highlight to reverse color
 hi Search gui=reverse
@@ -199,7 +213,6 @@ hi Search term=reverse
 nnoremap / /\v
 vnoremap / /\v
 
-command! -bar -range=% NotRocket execute '<line1>,<line2>s/:\(\w\+\)\s*=>/\1:/e' . (&gdefault ? '' : 'g')
 """ get from gb website's vimrc""""""""""""""""""""""""""""""""""""""
 function! CurDir()
   let curdir = substitute(getcwd(), $HOME, "~/", "g")
@@ -230,8 +243,6 @@ endif
 function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
-
-nnoremap <silent> <Leader>rts :call TrimWhiteSpace()<CR>
 
 autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
