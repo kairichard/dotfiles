@@ -56,7 +56,7 @@ linux: &linux
     - *ruby
 
   setup:
-    - <%= @package_path/"bootstrap/linux/debian_pkgs" %>
+    - <%= @package_path/"bootstrap/linux/debian_pkgs.sh" %>
     - *vim_bundles
     - *vim_ycm
 
