@@ -97,24 +97,6 @@ let g:ruby_debugger_builtin_sender = 0
 "set conceallevel=2 concealcursor=i
 "endif
 
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
-
-" better highlighting for diffs
-highlight DiffAdd cterm=bold ctermbg=none ctermfg=119
-highlight DiffDelete cterm=bold ctermbg=none ctermfg=167
-highlight DiffChange cterm=bold ctermbg=none ctermfg=227
-
-" highlight signs in Sy
-highlight SignifySignAdd cterm=bold ctermbg=None  ctermfg=119
-highlight SignifySignDelete cterm=bold ctermbg=None  ctermfg=167
-highlight SignifySignChange cterm=bold ctermbg=None  ctermfg=227
-
-" highlight signs in Sy
-highlight SignifyLineAdd cterm=bold ctermbg=None  ctermfg=119
-highlight SignifyLineDelete cterm=bold ctermbg=None  ctermfg=167
-highlight SignifyLineChange cterm=bold ctermbg=None  ctermfg=227
-
 let g:ctrlp_map = 'tt'
 
 let g:syntastic_auto_loc_list=0
@@ -266,3 +248,21 @@ autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 
 set secure          " disable shellexcutions
+
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
+" better highlighting for diffs
+highlight DiffAdd cterm=bold ctermbg=none ctermfg=119
+highlight DiffDelete cterm=bold ctermbg=none ctermfg=167
+highlight DiffChange cterm=bold ctermbg=none ctermfg=227
+
+" highlight signs in Sy
+highlight SignifySignAdd cterm=bold ctermbg=None  ctermfg=119
+highlight SignifySignDelete cterm=bold ctermbg=None  ctermfg=167
+highlight SignifySignChange cterm=bold ctermbg=None  ctermfg=227
+
+" highlight signs in Sy
+highlight SignifyLineAdd cterm=bold ctermbg=None  ctermfg=119
+highlight SignifyLineDelete cterm=bold ctermbg=None  ctermfg=167
+highlight SignifyLineChange cterm=bold ctermbg=None  ctermfg=227
