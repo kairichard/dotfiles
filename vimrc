@@ -118,6 +118,7 @@ let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_goto_definition_cmd = 'e'
 let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
+let g:pymode_doc = 0
 
 
 let g:signify_line_color_add    = 'DiffAdd'
