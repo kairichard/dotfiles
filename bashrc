@@ -72,6 +72,7 @@ source ~/.bash/plattforms/$PLATTFROM
 
 # APPEND PATHS AT THE END
 export PATH="$HOME/.bash/bin:$PATH"
+export EDITOR=$(which vim)
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

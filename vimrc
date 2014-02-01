@@ -47,6 +47,7 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'henrik/vim-indexed-search.git'
 NeoBundle 'mhinz/vim-signify'
+NeoBundle 'klen/python-mode'
 
 filetype plugin indent on     " required!
 "
