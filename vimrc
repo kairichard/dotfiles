@@ -6,7 +6,6 @@ set nocompatible    " use vim defaults
 
 if has('vim_starting')
    set nocompatible               " Be iMproved
-
   " Required
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
@@ -18,9 +17,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Required
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-
 " My bundles here:
-"
 " original repos on GitHub
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'scrooloose/nerdcommenter.git'
@@ -50,9 +47,7 @@ NeoBundle 'mhinz/vim-signify'
 NeoBundle 'klen/python-mode'
 
 filetype plugin indent on     " required!
-"
 NeoBundleCheck
-
 
 set ls=2            " allways show status line
 set tabstop=2       " numbers of spaces of tab character
@@ -72,7 +67,6 @@ set scrolloff=20    " Always keep line visible
 set hidden          " Lets u open new files with unsaved buffers
 set cursorline      " Highlight the current line
 set exrc            " Enable Projectspecific settings
-set secure          " disable shellexcutions
 set history=1000    " Set history size
 
 " Ignore these filenames during enhanced command line completion.
@@ -85,15 +79,11 @@ set wildignore+=*.sw? " Vim swap files
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-
 filetype on         " Enable filetype detection
 filetype indent on  " Enable filetype-specific indenting
 filetype plugin on  " Enable filetype-specific plugins
 
 set listchars=tab:▸\ ,eol:¬
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
-
 
 let mapleader = '_'
 
@@ -105,6 +95,24 @@ let g:ruby_debugger_builtin_sender = 0
 "set conceallevel=2 concealcursor=i
 "endif
 
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
+" better highlighting for diffs
+highlight DiffAdd cterm=bold ctermbg=none ctermfg=119
+highlight DiffDelete cterm=bold ctermbg=none ctermfg=167
+highlight DiffChange cterm=bold ctermbg=none ctermfg=227
+
+" highlight signs in Sy
+highlight SignifySignAdd cterm=bold ctermbg=None  ctermfg=119
+highlight SignifySignDelete cterm=bold ctermbg=None  ctermfg=167
+highlight SignifySignChange cterm=bold ctermbg=None  ctermfg=227
+
+" highlight signs in Sy
+highlight SignifyLineAdd cterm=bold ctermbg=None  ctermfg=119
+highlight SignifyLineDelete cterm=bold ctermbg=None  ctermfg=167
+highlight SignifyLineChange cterm=bold ctermbg=None  ctermfg=227
+
 let g:ctrlp_map = 'tt'
 
 let g:syntastic_auto_loc_list=0
@@ -112,7 +120,7 @@ let g:syntastic_loc_list_height=2
 let g:syntastic_auto_jump=0
 
 " pymode config
-let g:pymode = 0
+let g:pymode = 1
 let g:pymode_options = 0
 let g:pymode_folding = 0
 let g:pymode_motion = 1
@@ -126,6 +134,16 @@ let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_goto_definition_cmd = 'e'
 let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
+
+
+let g:signify_line_color_add    = 'DiffAdd'
+let g:signify_line_color_delete = 'DiffDelete'
+let g:signify_line_color_change = 'DiffChange'
+
+" Set Search Highlight to reverse color
+hi Search gui=reverse
+hi Search cterm=reverse
+hi Search term=reverse
 
 " Some remapping/shortcuts
 nmap <silent> ff :FufBuffer<CR>
@@ -204,10 +222,6 @@ endif
 
 
 
-" Set Search Highlight to reverse color
-hi Search gui=reverse
-hi Search cterm=reverse
-hi Search term=reverse
 "hi Statusline gui=sn
 " Fix Vims regexp-handling to be more like Perl
 nnoremap / /\v
@@ -248,3 +262,5 @@ autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
+
+set secure          " disable shellexcutions

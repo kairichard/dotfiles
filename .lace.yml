@@ -24,6 +24,12 @@ ruby: &ruby
   - gemrc
   - irbrc
 
+vim_bundles: &vim_bundles
+  - <%= @package_path/"bootstrap/vim/update_bundles.sh" %>
+
+vim_ycm: &vim_ycm
+  - <%= @package_path/"bootstrap/vim/ycm.sh" %>
+
 osx: &osx
   config_files:
     - *basic
@@ -36,6 +42,12 @@ osx: &osx
     - <%= @package_path/"bootstrap/osx/brew" %>
     - <%= @package_path/"bootstrap/osx/defaults" %>
     - <%= @package_path/"bootstrap/osx/fonts" %>
+    - *vim_bundles
+    - *vim_ycm
+
+  post:
+    update:
+      - *vim_bundles
 
 linux: &linux
   config_files:
@@ -45,6 +57,12 @@ linux: &linux
 
   setup:
     - <%= @package_path/"bootstrap/linux/debian_pkgs" %>
+    - *vim_bundles
+    - *vim_ycm
+
+  post:
+    update:
+      - *vim_bundles
 
 flavors:
   osx: *osx
