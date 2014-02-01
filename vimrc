@@ -109,7 +109,7 @@ let g:pymode_options = 0
 let g:pymode_folding = 0
 let g:pymode_motion = 1
 let g:pymode_virtualenv = 0
-let g:pymode_run = 1
+let g:pymode_run = 0
 let g:pymode_breakpoint = 1
 let g:pymode_lint = 0
 let g:pymode_rope = 1
@@ -247,6 +247,8 @@ autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
+
+autocmd FileType python setlocal completeopt-=preview
 
 set secure          " disable shellexcutions
 
