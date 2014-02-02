@@ -1,3 +1,4 @@
+echo 'Building VIM7.4'
 sudo apt-get purge vim
 sudo apt-get install mercurial build-essential ncurses-dev
 sudo apt-get install python-dev
@@ -10,3 +11,7 @@ make distclean
 ./configure --with-features=huge --enable-pythoninterp --enable-rubyinterp
 make
 sudo make install
+
+echo 'Installing rbenv'
+git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
