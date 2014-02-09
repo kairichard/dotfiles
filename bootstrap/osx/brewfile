@@ -18,6 +18,7 @@ install vim
 install rbenv
 install ruby-build
 install autojump
+install direnv
 
 tap phinze/homebrew-cask
 install brew-cask

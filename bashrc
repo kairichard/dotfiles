@@ -83,3 +83,5 @@ for plugin in ${active_plugins[@]}; do
   [[ -f $HOME/.bash/plugins/$plugin ]] && source $HOME/.bash/plugins/$plugin;
 done
 
+eval "$(direnv hook bash)"
+
