@@ -41,10 +41,21 @@ NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'henrik/vim-indexed-search.git'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'klen/python-mode'
+NeoBundle 'jnwhiteh/vim-golang'
+NeoBundle 'sjl/gundo.vim'
+
+" YCM does not work on darwin
+if has("unix")
+  let s:uname = system("echo -ne `uname -s`")
+  if s:uname == "Darwin"
+    NeoBundle 'ervandew/supertab'
+  else
+    NeoBundle 'Valloric/YouCompleteMe'
+  endif
+endif
 
 filetype plugin indent on     " required!
 NeoBundleCheck
@@ -52,6 +63,7 @@ NeoBundleCheck
 set ls=2            " allways show status line
 set tabstop=2       " numbers of spaces of tab character
 set shiftwidth=2    " numbers of spaces to (auto)indent
+set backspace=2     " behave like 'normal' backspace
 set expandtab 		  " tab gets expanded to spaces
 set scrolloff=3     " keep 3 lines when scrolling
 set showcmd         " display incomplete commands
@@ -68,8 +80,9 @@ set hidden          " Lets u open new files with unsaved buffers
 set cursorline      " Highlight the current line
 set exrc            " Enable Projectspecific settings
 set history=1000    " Set history size
-set backspace=2
-set relativenumber
+set relativenumber  " show linenumber relative to cursor
+
+set pastetoggle=<F7>
 
 " Ignore these filenames during enhanced command line completion.
 set wildignore+=*.aux,*.out,*.toc " LaTeX intermediate files
@@ -85,9 +98,11 @@ filetype on         " Enable filetype detection
 filetype indent on  " Enable filetype-specific indenting
 filetype plugin on  " Enable filetype-specific plugins
 
+syntax on
+colorscheme tomorrow_night
 set listchars=tab:▸\ ,eol:¬
 
-let mapleader = '_'
+let mapleader = ' '
 
 let g:fuf_buffer_keyDelete = '<C-d>'
 let g:ruby_debugger_builtin_sender = 0
@@ -103,27 +118,6 @@ let g:syntastic_auto_loc_list=0
 let g:syntastic_loc_list_height=2
 let g:syntastic_auto_jump=0
 
-" pymode config
-let g:pymode = 1
-let g:pymode_options = 0
-let g:pymode_folding = 0
-let g:pymode_motion = 1
-let g:pymode_virtualenv = 0
-let g:pymode_run = 0
-let g:pymode_breakpoint = 1
-let g:pymode_lint = 0
-let g:pymode_rope = 1
-let g:pymode_rope_completion = 0
-let g:pymode_rope_complete_on_dot = 0
-let g:pymode_rope_goto_definition_cmd = 'e'
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_doc = 0
-
-
-let g:signify_line_color_add    = 'DiffAdd'
-let g:signify_line_color_delete = 'DiffDelete'
-let g:signify_line_color_change = 'DiffChange'
 
 " Set Search Highlight to reverse color
 hi Search gui=reverse
@@ -141,6 +135,18 @@ nnoremap <leader>d: tag <C-R><C-W><CR>
 " Open split windo on jump in it
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>l
+" Fast saving
+nnoremap <leader>w :w!<cr>
+
+" with this, we can now type ",." to exit out of insert mode
+" if we really wanted to type ",.", then just type one char, wait half a sec,
+" type another
+inoremap ,. <Esc>
+vnoremap ,. <Esc>
+
+" This command will allow us to save a file we don't have permission to save
+" *after* we have already opened it. Super useful.
+cnoremap w!! w !sudo tee % >/dev/null
 
 cmap wb Bclose
 cmap W w
@@ -172,7 +178,6 @@ let NERDTreeIgnore = ['\.pyc$']
 "let g:Powerline_symbols = 'fancy'
 
 if has("gui_running")
-
   colorscheme tomorrow_night
   set fuopt=maxvert,maxhorz " Use maxinum screen space in fullscreen mode
 
@@ -185,26 +190,7 @@ if has("gui_running")
   " No scrollbar
   set guioptions+=LlRrb
   set guioptions-=LlRrb
-
-  if has("win32") || has("win64")
-    " do nothing
-  elseif has("mac")
-    set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
-  else
-    set guifont=Envy\ Code\ R\ 10
-  endif
-else
-  if has("unix")
-    inoremap <silent> <Nul> <C-X><C-O>
-  endif
-
-  colorscheme tomorrow_night
-  syntax on
-  if &term == "xterm"
-    colorscheme ir_black
-  end
 endif
-
 
 
 "hi Statusline gui=sn
@@ -251,9 +237,24 @@ autocmd BufWritePre     * :call TrimWhiteSpace()
 autocmd FileType python setlocal completeopt-=preview
 
 "set secure          " disable shellexcutions
-
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
+
+if v:version >= 704
+  " The new Vim regex engine is currently slooooow as hell which makes syntax
+  " highlighting slow, which introduces typing latency.
+  " Consider removing this in the future when the new regex engine becomes
+  " faster.
+  set regexpengine=1
+endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 Signify                                 "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:signify_line_color_add    = 'DiffAdd'
+let g:signify_line_color_delete = 'DiffDelete'
+let g:signify_line_color_change = 'DiffChange'
 
 " better highlighting for diffs
 highlight DiffAdd cterm=bold ctermbg=none ctermfg=119
@@ -269,3 +270,31 @@ highlight SignifySignChange cterm=bold ctermbg=None  ctermfg=227
 highlight SignifyLineAdd cterm=bold ctermbg=None  ctermfg=119
 highlight SignifyLineDelete cterm=bold ctermbg=None  ctermfg=167
 highlight SignifyLineChange cterm=bold ctermbg=None  ctermfg=227
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 Pymode                                  "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:pymode = 1
+let g:pymode_options = 0
+let g:pymode_folding = 0
+let g:pymode_motion = 1
+let g:pymode_virtualenv = 0
+let g:pymode_run = 0
+let g:pymode_breakpoint = 1
+let g:pymode_lint = 0
+let g:pymode_rope = 1
+let g:pymode_rope_completion = 0
+let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_goto_definition_cmd = 'e'
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_doc = 0
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 Gundo                                   "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" f5 toggles the Gundo plugin window
+nnoremap <F5> :GundoToggle<CR>
+let g:gundo_width=80
