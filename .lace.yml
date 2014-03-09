@@ -23,6 +23,7 @@ ruby: &ruby
   - rspec
   - gemrc
   - irbrc
+  - pryrc
 
 vim_bundles: &vim_bundles
   - <%= @package_path/"bootstrap/vim/update_bundles.sh" %>
