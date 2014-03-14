@@ -1,5 +1,5 @@
 ### Install
-Installing is is easy fetch the packages using:
+Installing is easy just fetch the packages using:
 
 ```
 $ lace fetch https://github.com/kairichard/dotfiles.git --name=kairichard_dotfiles
