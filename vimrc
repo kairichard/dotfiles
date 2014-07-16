@@ -52,8 +52,8 @@ NeoBundle 'honza/vim-snippets'
 
 " YCM does not work on darwin
 if has("unix")
-  let s:uname = system("echo -ne `uname -s`")
-  if s:uname == "Darwin"
+  let s:uname = system("echo -ne $SUPERTAB")
+  if s:uname == "1"
     NeoBundle 'ervandew/supertab'
   else
     NeoBundle 'Valloric/YouCompleteMe'
