@@ -47,6 +47,8 @@ NeoBundle 'mhinz/vim-signify'
 NeoBundle 'klen/python-mode'
 NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
 
 " YCM does not work on darwin
 if has("unix")
@@ -291,6 +293,16 @@ let g:pymode_syntax = 1
 let g:pymode_syntax_all = 1
 let g:pymode_doc = 0
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 Ultrasnips                              "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<F2>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Gundo                                   "
