@@ -4,6 +4,7 @@ sudo apt-get install mercurial build-essential ncurses-dev
 sudo apt-get install python-dev
 sudo apt-get install build-essential cmake
 sudo apt-get install ack-grep
+sudo apt-get install exuberant-ctags
 
 cd /tmp
 hg clone https://vim.googlecode.com/hg/ vim
