@@ -118,8 +118,14 @@ let g:ruby_debugger_builtin_sender = 0
 let g:ctrlp_map = 'tt'
 
 let g:syntastic_auto_loc_list=0
-let g:syntastic_loc_list_height=2
+let g:syntastic_loc_list_height=0
 let g:syntastic_auto_jump=0
+let g:ctrlp_root_markers = ['.ctrlp']
+let g:syntastic_mode_map = { 'mode': 'active',
+                              \ 'active_filetypes': ['css'] }
+
+nmap <leader>t :CtrlPtjump<CR>
+nmap <leader>ct :CtrlPTag<CR>
 
 
 " Set Search Highlight to reverse color
