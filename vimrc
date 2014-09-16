@@ -84,6 +84,7 @@ set cursorline      " Highlight the current line
 set exrc            " Enable Projectspecific settings
 set history=1000    " Set history size
 set relativenumber  " show linenumber relative to cursor
+set modelines=5     " Enable magick vim header in files
 
 set pastetoggle=<F7>
 
