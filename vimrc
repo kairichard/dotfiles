@@ -47,7 +47,6 @@ NeoBundle 'mhinz/vim-signify'
 NeoBundle 'klen/python-mode'
 NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'sjl/gundo.vim'
-NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 
 " YCM does not work on darwin
