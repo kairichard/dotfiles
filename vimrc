@@ -242,6 +242,13 @@ autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 
+
+" Git commits.
+autocmd FileType gitcommit setlocal spell spelllang=en_us
+
+" Subversion commits.
+autocmd FileType svn       setlocal spell spelllang=en_us
+
 autocmd FileType python setlocal completeopt-=preview
 
 "set secure          " disable shellexcutions
