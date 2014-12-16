@@ -2,7 +2,6 @@
 " Author: Kai Richard König
 " Website: http://kairichardkoenig.com
 " Inspired by a lot of people
-set nocompatible    " use vim defaults
 
 if has('vim_starting')
    set nocompatible               " Be iMproved
