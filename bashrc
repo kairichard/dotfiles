@@ -77,11 +77,10 @@ export EDITOR=$(which vim)
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-active_plugins=("rbenv")
+active_plugins=("rbenv" "direnv")
 
 for plugin in ${active_plugins[@]}; do
   [[ -f $HOME/.bash/plugins/$plugin ]] && source $HOME/.bash/plugins/$plugin;
 done
 
-eval "$(direnv hook bash)"
 
