@@ -1,5 +1,5 @@
 echo 'Building VIM7.4'
-sudo apt-get purge vim
+sudo apt-get purge --yes vim
 sudo apt-get install --yes mercurial build-essential ncurses-dev
 sudo apt-get install --yes python-dev
 sudo apt-get install --yes build-essential cmake
