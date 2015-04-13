@@ -48,6 +48,8 @@ NeoBundle 'klen/python-mode'
 NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'honza/vim-snippets'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'AndrewRadev/sideways.vim'
 
 " YCM does not work on darwin
 if has("unix")
