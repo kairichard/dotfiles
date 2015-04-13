@@ -2,7 +2,6 @@
 " Author: Kai Richard König
 " Website: http://kairichardkoenig.com
 " Inspired by a lot of people
-set nocompatible    " use vim defaults
 
 if has('vim_starting')
    set nocompatible               " Be iMproved
@@ -244,6 +243,13 @@ autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
+
+
+" Git commits.
+autocmd FileType gitcommit setlocal spell spelllang=en_us
+
+" Subversion commits.
+autocmd FileType svn       setlocal spell spelllang=en_us
 
 autocmd FileType python setlocal completeopt-=preview
 
