@@ -65,6 +65,11 @@ linux: &linux
     update:
       - *vim_bundles
 
+linux-desktop: &linux-desktop
+  setup:
+    - <%= @package_path/"bootstrap/linux-desktop/debian_pkgs.sh" %>
+
 flavors:
   osx: *osx
   linux: *linux
+  linux-desktop: *linux *linux-desktop
