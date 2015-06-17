@@ -13,6 +13,7 @@ base: &basic
 
 desktop: &desktop
   - gsdrc
+  - xlock
 
 vcs: &vcs
   - gitconfig
@@ -70,6 +71,7 @@ ubuntu-desktop: &ubuntu-desktop
     - *basic
     - *vcs
     - *ruby
+    - *desktop
 
   setup:
     - <%= @package_path/"bootstrap/ubuntu/debian_pkgs.sh" %>
