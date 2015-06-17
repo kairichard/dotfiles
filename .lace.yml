@@ -66,10 +66,22 @@ ubuntu: &ubuntu
       - *vim_bundles
 
 ubuntu-desktop: &ubuntu-desktop
+  config_files:
+    - *basic
+    - *vcs
+    - *ruby
+
   setup:
+    - <%= @package_path/"bootstrap/ubuntu/debian_pkgs.sh" %>
     - <%= @package_path/"bootstrap/ubuntu-desktop/debian_pkgs.sh" %>
+    - *vim_bundles
+    - *vim_ycm
+
+  post:
+    update:
+      - *vim_bundles
 
 flavors:
   osx: *osx
   ubuntu: *ubuntu
-  ubuntu-desktop: *ubuntu *ubuntu-desktop
+  ubuntu-desktop: *ubuntu-desktop
