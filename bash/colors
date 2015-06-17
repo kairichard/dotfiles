@@ -1,4 +1,6 @@
 #/* vim: set filetype=sh : */ 
+if tty -s
+then
 Black="$(tput setaf 0)"
 BlackBG="$(tput setab 0)"
 DarkGrey="$(tput bold ; tput setaf 0)"
@@ -24,3 +26,4 @@ Cyan="$(tput setaf 6)"
 CyanBG="$(tput setab 6)"
 LightCyan="$(tput bold ; tput setaf 6)"
 NC="$(tput sgr0)" # No Color
+fi
