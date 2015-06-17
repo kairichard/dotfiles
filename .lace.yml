@@ -50,14 +50,14 @@ osx: &osx
     update:
       - *vim_bundles
 
-linux: &linux
+ubuntu: &ubuntu
   config_files:
     - *basic
     - *vcs
     - *ruby
 
   setup:
-    - <%= @package_path/"bootstrap/linux/debian_pkgs.sh" %>
+    - <%= @package_path/"bootstrap/ubuntu/debian_pkgs.sh" %>
     - *vim_bundles
     - *vim_ycm
 
@@ -65,11 +65,11 @@ linux: &linux
     update:
       - *vim_bundles
 
-linux-desktop: &linux-desktop
+ubuntu-desktop: &ubuntu-desktop
   setup:
-    - <%= @package_path/"bootstrap/linux-desktop/debian_pkgs.sh" %>
+    - <%= @package_path/"bootstrap/ubuntu-desktop/debian_pkgs.sh" %>
 
 flavors:
   osx: *osx
-  linux: *linux
-  linux-desktop: *linux *linux-desktop
+  ubuntu: *ubuntu
+  ubuntu-desktop: *ubuntu *ubuntu-desktop
