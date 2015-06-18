@@ -1,10 +1,8 @@
 echo 'Building VIM7.4'
 sudo apt-get purge --yes vim
-sudo apt-get install --yes mercurial build-essential ncurses-dev
-sudo apt-get install --yes python-dev
-sudo apt-get install --yes build-essential cmake
-sudo apt-get install --yes ack-grep
-sudo apt-get install --yes exuberant-ctags
+sudo apt-get install --yes mercurial ncurses-dev python-dev
+sudo apt-get install --yes build-essential cmake ack-grep exuberant-ctags
+sudo apt-get install --yes htop
 
 cd /tmp
 hg clone https://vim.googlecode.com/hg/ vim
