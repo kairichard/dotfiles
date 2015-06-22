@@ -16,3 +16,6 @@
 [submodule "config/awesome/lain"]
 	path = config/awesome/lain
 	url = https://github.com/copycat-killer/lain.git
+[submodule "config/awesome/eminent"]
+	path = config/awesome/eminent
+	url = https://github.com/guotsuan/eminent.git

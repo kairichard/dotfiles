@@ -1,6 +1,6 @@
 [user]
 	name = Kai Richard Koenig
-	email = kai.richard.koenig@googlemail.com
+	email = kai.koenig@paessler.com
 [core]
 	editor = vim -f
 	excludesfile = ~/.gitignore
@@ -24,3 +24,5 @@
 [merge]
 	keepBackup = false;
 	tool = vim
+[http]
+	sslVerify = false

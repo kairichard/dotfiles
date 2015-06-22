@@ -84,3 +84,11 @@ for plugin in ${active_plugins[@]}; do
 done
 
 
+# Added by lace dev-dotfiles
+if [ -f $HOME/.bashrc.bis.dev ]; then
+   source $HOME/.bashrc.bis.dev
+fi
+
+if [ -f $HOME/.bis.profile ]; then
+   source $HOME/.bis.profile
+fi
