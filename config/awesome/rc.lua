@@ -1,8 +1,8 @@
 --[[
-                                      
-     Multicolor Awesome WM config 2.0 
-     github.com/copycat-killer        
-                                      
+
+     Multicolor Awesome WM config 2.0
+     github.com/copycat-killer
+
 --]]
 
 -- {{{ Required libraries
@@ -72,6 +72,7 @@ graphics   = "gimp"
 mail       = terminal .. " -e mutt "
 
 local layouts = {
+    lain.layout.uselessfair,
     awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
@@ -118,7 +119,7 @@ clockicon = wibox.widget.imagebox(beautiful.widget_clock)
 mytextclock = lain.widgets.abase({
     timeout  = 60,
     cmd      = "date +'%A %d %B %R'",
-    settings = function() 
+    settings = function()
         local t_output = ""
         local o_it = string.gmatch(output, "%S+")
 
@@ -339,7 +340,7 @@ for s = 1, screen.count() do
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
     -- Create the upper wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s, height = 20 })
+    mywibox[s] = awful.wibox({ position = "top", screen = s, height = 40 })
     --border_width = 0, height =  20 })
 
     -- Widgets that are aligned to the upper left
