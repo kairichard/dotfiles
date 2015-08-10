@@ -62,7 +62,7 @@ if has("unix")
   endif
 endif
 
- all neobundle#end()
+call neobundle#end()
 
 filetype plugin indent on     " required!
 NeoBundleCheck
