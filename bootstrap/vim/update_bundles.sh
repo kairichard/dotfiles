@@ -1,4 +1,4 @@
 echo "Updating Vim-Bundles"
-vim +NeoBundleInstall\(\!\) +qall
+vim +NeoBundleInstall +qall
 echo "DONE"
 
