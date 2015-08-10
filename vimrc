@@ -4,13 +4,15 @@
 " Inspired by a lot of people
 
 if has('vim_starting')
-   set nocompatible               " Be iMproved
-  " Required
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+
+  " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
-
 " Required
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 " Let NeoBundle manage NeoBundle
 " Required
@@ -59,6 +61,8 @@ if has("unix")
     NeoBundle 'Valloric/YouCompleteMe'
   endif
 endif
+
+ all neobundle#end()
 
 filetype plugin indent on     " required!
 NeoBundleCheck
