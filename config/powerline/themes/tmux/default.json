@@ -5,9 +5,22 @@
 				"function": "powerline.segments.common.sys.system_load",
 				"priority": 50
 			},
+      {
+        "function": "powerline.segments.common.net.internal_ip",
+        "args":
+          {
+            "interface": "auto"
+          }
+      },
 			{
-				"function": "powerline.segments.common.net.hostname"
+				"function": "powerline.segments.common.net.hostname",
+				"priority": 50
 			}
-		]
+		],
+    "left":[
+      {
+        "function": "powerline.segments.common.vcs.branch"
+      }
+    ]
 	}
 }
