@@ -33,6 +33,9 @@ vim_bundles: &vim_bundles
 vim_ycm: &vim_ycm
   - <%= @package_path/"bootstrap/vim/ycm.sh" %>
 
+powerline: &powerline
+  - <%= @package_path/"bootstrap/powerline/install.sh" %>
+
 osx: &osx
   config_files:
     - *basic
@@ -45,6 +48,7 @@ osx: &osx
     - <%= @package_path/"bootstrap/osx/brew" %>
     - <%= @package_path/"bootstrap/osx/defaults" %>
     - <%= @package_path/"bootstrap/osx/fonts" %>
+    - *powerline
     - *vim_bundles
     - *vim_ycm
 
@@ -60,6 +64,7 @@ ubuntu: &ubuntu
 
   setup:
     - <%= @package_path/"bootstrap/ubuntu/debian_pkgs.sh" %>
+    - *powerline
     - *vim_bundles
     - *vim_ycm
 
@@ -77,6 +82,7 @@ ubuntu-desktop: &ubuntu-desktop
   setup:
     - <%= @package_path/"bootstrap/ubuntu/debian_pkgs.sh" %>
     - <%= @package_path/"bootstrap/ubuntu-desktop/debian_pkgs.sh" %>
+    - *powerline
     - *vim_bundles
     - *vim_ycm
 
