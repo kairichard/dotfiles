@@ -1,4 +1,4 @@
 echo "Installing powerline"
-sudo pip install powerline
+sudo pip install powerline-status
 echo "DONE"
 
