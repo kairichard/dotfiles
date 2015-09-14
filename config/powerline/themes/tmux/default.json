@@ -1,26 +1,32 @@
 {
-	"segments": {
-		"right": [
-			{
-				"function": "powerline.segments.common.sys.system_load",
-				"priority": 50
-			},
-      {
-        "function": "powerline.segments.common.net.internal_ip",
-        "args":
-          {
-            "interface": "auto"
-          }
-      },
-			{
-				"function": "powerline.segments.common.net.hostname",
-				"priority": 50
-			}
-		],
-    "left":[
-      {
-        "function": "powerline.segments.common.vcs.branch"
-      }
-    ]
-	}
+    "segments": {
+        "right": [
+            {
+                "function": "powerline.segments.common.sys.system_load",
+                "priority": 50
+            },
+            {
+              "function": "powerline.segments.common.net.internal_ip",
+              "priority": 50,
+              "args":
+                {
+                  "interface": "auto",
+                  "ipv": 4
+                }
+            },
+            {
+                "function": "powerline.segments.common.net.hostname",
+                "priority": 50
+            }
+        ],
+        "left":[
+            {
+                "function": "powerline.segments.common.net.external_ip",
+                "priority": 50
+            },
+            {
+              "function": "powerline.segments.common.vcs.branch"
+            }
+        ]
+    }
 }
