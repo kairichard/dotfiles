@@ -12,7 +12,6 @@ install findutils
 
 install ack
 install htop
-install git
 install tmux
 install vim
 install rbenv
