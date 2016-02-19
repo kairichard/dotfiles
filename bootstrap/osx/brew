@@ -8,16 +8,22 @@ function installcask() {
         brew cask install "${@}"
 }
 
-installcask dropbox
-installcask google-chrome
 installcask imagealpha
 installcask imageoptim
 installcask iterm2
 installcask macvim
-installcask adium
 installcask sequel-pro
 installcask the-unarchiver
-installcask tor-browser
-installcask transmission
 installcask virtualbox
 installcask vlc
+installcask atom
+installcask google-drive
+installcask apache-directory-studio
+installcask skype
+installcask microsoft-office
+installcask microsoft-lync
+installcask pycharm
+installcask sizeup
+installcask adobe-creative-cloud
+installcask macpass
+installcask dash
