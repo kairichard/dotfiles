@@ -52,8 +52,9 @@ installcask skype
 installcask microsoft-office
 installcask microsoft-lync
 installcask pycharm
-installcask sizeup
 installcask adobe-creative-cloud
 installcask macpass
 installcask dash
 installcask spectacle
+installcask cord
+
