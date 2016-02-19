@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 echo 'brewing our machine'
-
+brew tap phinze/homebrew-cask
+brew tap mopidy/mopidy
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -22,8 +23,14 @@ brew install rbenv
 brew install ruby-build
 brew install autojump
 brew install direnv
+brew install ncmpcpp
+brew install mopidy
+brew install weechat
+brew install docker
+brew install dockertoolbox
+brew install flux
 
-brew tap phinze/homebrew-cask
+
 brew install brew-cask
 
 function installcask() {
