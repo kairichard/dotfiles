@@ -27,3 +27,4 @@ installcask sizeup
 installcask adobe-creative-cloud
 installcask macpass
 installcask dash
+installcask spectacle
