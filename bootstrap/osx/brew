@@ -28,7 +28,7 @@ brew install ncmpcpp
 brew install mopidy
 brew install weechat --with-python --with-perl --with-ruby
 brew install docker
-brew install flux
+brew install python
 
 
 brew install brew-cask
