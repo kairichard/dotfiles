@@ -26,9 +26,8 @@ brew install autojump
 brew install direnv
 brew install ncmpcpp
 brew install mopidy
-brew install weechat
+brew install weechat --with-python --with-perl --with-ruby
 brew install docker
-brew install dockertoolbox
 brew install flux
 
 
@@ -59,3 +58,5 @@ installcask dash
 installcask spectacle
 installcask cord
 installcask spideroakone
+installcask flux 
+installcask dockertoolbox
