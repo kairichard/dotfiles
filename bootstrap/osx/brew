@@ -19,6 +19,7 @@ brew install findutils
 brew install ack
 brew install htop
 brew install tmux
+brew install python
 brew install vim
 brew install rbenv
 brew install ruby-build
@@ -26,10 +27,8 @@ brew install autojump
 brew install direnv
 brew install ncmpcpp
 brew install mopidy
-brew install weechat
+brew install weechat --with-python --with-perl --with-ruby
 brew install docker
-brew install dockertoolbox
-brew install flux
 
 
 brew install brew-cask
@@ -59,3 +58,5 @@ installcask dash
 installcask spectacle
 installcask cord
 installcask spideroakone
+installcask flux 
+installcask dockertoolbox
