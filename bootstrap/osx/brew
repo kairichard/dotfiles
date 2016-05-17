@@ -1,23 +1,66 @@
 #!/usr/bin/env bash
 
 echo 'brewing our machine'
-brew bundle ~/.bootstrap/osx/brewfile
+brew tap phinze/homebrew-cask
+brew tap mopidy/mopidy
+# Make sure we’re using the latest Homebrew
+brew update
 
+# Upgrade any already-installed formulae
+brew upgrade
+
+# Install GNU core utilities (those that come with OS X are outdated)
+# Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
+brew install coreutils
+brew install cmake
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew install findutils
+
+brew install ack
+brew install htop
+brew install tmux
+brew install python
+brew install rbenv
+brew install ruby-build
+brew install autojump
+brew install direnv
+brew install ncmpcpp
+brew install mopidy
+brew install weechat --with-python --with-perl --with-ruby
+brew install docker
+brew install dos2unix
+brew install homebrew/binary/kwm
+brew install vim --with-python
+brew install mawk
+
+
+brew install brew-cask
 
 function installcask() {
         brew cask install "${@}"
 }
 
-installcask dropbox
-installcask google-chrome
 installcask imagealpha
 installcask imageoptim
 installcask iterm2
 installcask macvim
-installcask adium
 installcask sequel-pro
 installcask the-unarchiver
-installcask tor-browser
-installcask transmission
 installcask virtualbox
 installcask vlc
+installcask atom
+installcask google-drive
+installcask apache-directory-studio
+installcask skype
+installcask microsoft-office
+installcask microsoft-lync
+installcask pycharm
+installcask adobe-creative-cloud
+installcask macpass
+installcask dash
+installcask spectacle
+installcask cord
+installcask spideroakone
+installcask flux
+installcask dockertoolbox
+installcask caskroom/fonts/font-hack

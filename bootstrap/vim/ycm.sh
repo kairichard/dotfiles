@@ -1,5 +1,5 @@
 echo "Building YCM"
 cd ~/.vim/bundle/YouCompleteMe
-./install.sh
+./install.py --clang-completer
 echo "DONE"
 
