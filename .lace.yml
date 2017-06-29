@@ -42,7 +42,6 @@ osx: &osx
     - *desktop
     - *vcs
     - *ruby
-    - iterm_server_profile_map
 
   setup:
     - <%= @package_path/"bootstrap/osx/brew" %>
