@@ -26,3 +26,5 @@
 	tool = vim
 [http]
 	sslVerify = false
+[push]
+	default = current
