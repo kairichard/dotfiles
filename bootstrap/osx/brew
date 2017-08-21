@@ -48,7 +48,7 @@ installcask the-unarchiver
 installcask virtualbox
 installcask vlc
 installcask atom
-installcask google-drive
+installcask google-backup-and-sync
 installcask apache-directory-studio
 installcask skype
 installcask microsoft-office
