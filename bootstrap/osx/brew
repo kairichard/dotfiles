@@ -32,9 +32,6 @@ brew install homebrew/binary/kwm
 brew install vim --with-python
 brew install mawk
 
-
-brew install brew-cask
-
 function installcask() {
         brew cask install "${@}"
 }
