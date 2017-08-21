@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo 'brewing our machine'
-brew tap phinze/homebrew-cask
+brew tap caskroom/cask
 brew tap mopidy/mopidy
 # Make sure we’re using the latest Homebrew
 brew update
