@@ -27,7 +27,6 @@ brew install direnv
 brew install ncmpcpp
 brew install mopidy
 brew install weechat --with-python --with-perl --with-ruby
-brew install docker
 brew install dos2unix
 brew install homebrew/binary/kwm
 brew install vim --with-python
@@ -53,14 +52,15 @@ installcask google-drive
 installcask apache-directory-studio
 installcask skype
 installcask microsoft-office
-installcask microsoft-lync
+installcask microsoft-teams
+installcask skype-for-business
 installcask pycharm
+installcask whatsapp
 installcask adobe-creative-cloud
 installcask macpass
 installcask dash
 installcask spectacle
 installcask cord
-installcask spideroakone
 installcask flux
-installcask dockertoolbox
+installcask docker
 installcask caskroom/fonts/font-hack
