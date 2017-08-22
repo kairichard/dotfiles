@@ -1,0 +1,10 @@
+language: ruby
+os:
+  - osx
+
+osx_image: xcode8.3
+before_install:
+  - sudo gem install lace
+
+script:
+  - lace fetch . --name=test && lace setup test osx
