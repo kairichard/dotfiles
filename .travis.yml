@@ -3,6 +3,7 @@ os:
   - osx
 
 osx_image: xcode8.3
+
 before_install:
   - sudo gem install lace
 
