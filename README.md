@@ -1,4 +1,4 @@
-### Install [![Build Status](https://travis-ci.org/kairichard/dotfiles.svg?branch=master)](https://travis-ci.org/kairichard/dotfiles)
+## Installing [![Build Status](https://travis-ci.org/kairichard/dotfiles.svg?branch=master)](https://travis-ci.org/kairichard/dotfiles)
 Installing is easy just fetch the packages using:
 
 ```
