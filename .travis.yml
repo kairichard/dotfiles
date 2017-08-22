@@ -1,11 +1,19 @@
 language: ruby
 os:
   - osx
+  - linux
 
-osx_image: xcode8.3
+matrix:
+  include:
+    - os: linux
+      sudo: required
+    - os: osx
+      osx_image: xcode8.3
 
 before_install:
   - sudo gem install lace
 
 script:
-  - lace fetch . --name=test && lace setup test osx
+  - lace fetch . --name=test
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then lace setup test osx          ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then lace setup ubuntu          ; fi
