@@ -10,7 +10,7 @@ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 echo 'Installing silver surfer'
-wget http://geoff.greer.fm/ag/releases/the_silver_searcher-0.32.0.tar.gz
-extract the_silver_searcher-0.32.0.tar.gz
-cd the_silver_searcher-0.32.0 && ./configure && make && make install
+wget https://github.com/ggreer/the_silver_searcher/archive/2.0.0.tar.gz
+tar -xvzf the_silver_searcher-2.0.0.tar.gz
+cd the_silver_searcher-2.0.0 && ./configure && make && make install
 
