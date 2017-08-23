@@ -2,7 +2,6 @@
 
 echo 'brewing our machine'
 brew tap caskroom/cask
-brew tap mopidy/mopidy
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -25,12 +24,14 @@ brew install ruby-build
 brew install autojump
 brew install direnv
 brew install ncmpcpp
-brew install mopidy
 brew install weechat --with-python --with-perl --with-ruby
 brew install dos2unix
 brew install homebrew/binary/kwm
 brew install vim --with-python
 brew install mawk
+
+# Fixes python pip
+brew unlink python && brew link python
 
 function installcask() {
         brew cask install "${@}"
