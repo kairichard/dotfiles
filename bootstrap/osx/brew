@@ -2,6 +2,7 @@
 
 echo 'brewing our machine'
 brew tap caskroom/cask
+brew tap caskroom/fonts
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -61,4 +62,4 @@ installcask spectacle
 installcask cord
 installcask flux
 installcask docker
-installcask caskroom/fonts/font-hack
+installcask font-hack
