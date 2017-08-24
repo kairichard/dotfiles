@@ -63,3 +63,6 @@ installcask cord
 installcask flux
 installcask docker
 installcask font-hack
+
+sudo pip install iterminator
+iterminator -s "Tomorrow Night"
