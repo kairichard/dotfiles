@@ -1,8 +1,7 @@
 ## .dotfiles [![Build Status](https://travis-ci.org/kairichard/dotfiles.svg?branch=master)](https://travis-ci.org/kairichard/dotfiles)
 
-### Preview
-In iterm2 with tomorrow night as theme.
 <img src="https://github.com/kairichard/dotfiles/raw/master/preview.png" width=600>
+iterm2 with tomorrow night as theme.
 
 
 ### Installing 
