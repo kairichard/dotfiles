@@ -30,6 +30,7 @@ brew install dos2unix
 brew install homebrew/binary/kwm
 brew install vim --with-python
 brew install mawk
+brew install openssh
 
 # Fixes python pip
 brew unlink python && brew link python
@@ -50,19 +51,19 @@ installcask atom
 installcask google-backup-and-sync
 installcask apache-directory-studio
 installcask skype
-installcask microsoft-office
+if [[ "$CI" != "true" ]]; then installcask microsoft-office ; fi
 installcask microsoft-teams
 installcask skype-for-business
 installcask pycharm
 installcask whatsapp
 installcask adobe-creative-cloud
 installcask macpass
-installcask dash
 installcask spectacle
-installcask cord
+installcask alfred
 installcask flux
 installcask docker
 installcask font-hack
 
+
+echo "Installing others"
 sudo pip install iterminator
-iterminator -s "Tomorrow Night"
