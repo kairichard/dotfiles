@@ -13,7 +13,7 @@ git_info_ps1 ()
     else
         return 0
     fi
-    echo "$gitver$NC"
+    echo "$White at $gitver$NC"
 }
 
 

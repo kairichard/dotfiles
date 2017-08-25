@@ -40,7 +40,7 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 if [ "$color_prompt" = yes ]; then
-    PS1="$Bold$Cyan\u$NC$White on $Pink\h$NC$White in $Brown\w$NC$White at \$(git_info_ps1)\n>> "
+    PS1="$Bold$Cyan\u$NC$White on $Pink\h$NC$White in $Brown\w$NC\$(git_info_ps1)\n>> "
 else
     PS1='\u@\h:\w\$ '
 fi
