@@ -13,19 +13,9 @@ git_info_ps1 ()
     else
         return 0
     fi
-    echo "::$Cyan(git:$gitver$Cyan)$NC"
+    echo "$White at $gitver$NC"
 }
 
-
-svn_info_ps1() {
-    local s=
-    if [[ -d ".svn" ]] ; then
-        svn=\(svn:$(svn info | sed -n -e '/^Revision: \([0-9]*\).*$/s//\1/p' )\)
-		echo -n "::$Green$svn$NC"
-    else
-		echo -n ""
-    fi
-}
 
 function echo_red() {
     echo "$(tput setaf 1)$*$(tput sgr0)"

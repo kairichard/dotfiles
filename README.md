@@ -1,4 +1,10 @@
-### Install
+## .dotfiles [![Build Status](https://travis-ci.org/kairichard/dotfiles.svg?branch=master)](https://travis-ci.org/kairichard/dotfiles)
+
+<img src="https://github.com/kairichard/dotfiles/raw/master/preview.png" width=600>
+iterm2 with tomorrow night as theme.
+
+
+### Installing 
 Installing is easy just fetch the packages using:
 
 ```

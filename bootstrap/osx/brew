@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 echo 'brewing our machine'
-brew tap phinze/homebrew-cask
-brew tap mopidy/mopidy
+brew tap caskroom/cask
+brew tap caskroom/fonts
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -25,16 +25,15 @@ brew install ruby-build
 brew install autojump
 brew install direnv
 brew install ncmpcpp
-brew install mopidy
 brew install weechat --with-python --with-perl --with-ruby
-brew install docker
 brew install dos2unix
 brew install homebrew/binary/kwm
 brew install vim --with-python
 brew install mawk
+brew install openssh
 
-
-brew install brew-cask
+# Fixes python pip
+brew unlink python && brew link python
 
 function installcask() {
         brew cask install "${@}"
@@ -49,18 +48,22 @@ installcask the-unarchiver
 installcask virtualbox
 installcask vlc
 installcask atom
-installcask google-drive
+installcask google-backup-and-sync
 installcask apache-directory-studio
 installcask skype
-installcask microsoft-office
-installcask microsoft-lync
+if [[ "$CI" != "true" ]]; then installcask microsoft-office ; fi
+installcask microsoft-teams
+installcask skype-for-business
 installcask pycharm
+installcask whatsapp
 installcask adobe-creative-cloud
 installcask macpass
-installcask dash
 installcask spectacle
-installcask cord
-installcask spideroakone
+installcask alfred
 installcask flux
-installcask dockertoolbox
-installcask caskroom/fonts/font-hack
+installcask docker
+installcask font-hack
+
+
+echo "Installing others"
+sudo pip install iterminator

@@ -1,0 +1,16 @@
+language: c
+
+matrix:
+  include:
+    - os: linux
+      sudo: required
+    - os: osx
+      osx_image: xcode8.3
+
+before_install:
+  - sudo gem install lace
+
+script:
+  - lace fetch . --name=test
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then travis_wait 40 lace setup test osx --force         ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then lace setup test ubuntu --force                   ; fi

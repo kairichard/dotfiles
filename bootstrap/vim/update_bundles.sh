@@ -1,4 +1,4 @@
 echo "Updating Vim-Bundles"
-vim +NeoBundleInstall +qall
+~/.vim/bundle/neobundle.vim/bin/neoinstall
 echo "DONE"
 

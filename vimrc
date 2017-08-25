@@ -112,6 +112,7 @@ set listchars=tab:▸\ ,eol:¬
 
 let mapleader = ' '
 
+let g:pymode_rope_regenerate_on_write = 0
 let g:fuf_buffer_keyDelete = '<C-d>'
 let g:ruby_debugger_builtin_sender = 0
 
@@ -183,8 +184,6 @@ inoremap jj <ESC>
 "inoremap <down> <nop>
 "inoremap <left> <nop>
 "inoremap <right> <nop>
-nnoremap j gj
-nnoremap k gk
 
 " guess who ignors wildignore
 let NERDTreeIgnore = ['\.pyc$']
