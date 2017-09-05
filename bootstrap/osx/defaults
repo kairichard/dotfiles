@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+if [[ "$CI" == "true" ]]; then echo "Skipping defaults in CI"; exit 0 ; fi
 # ~/.osx — https://mths.be/osx
 
 # Ask for the administrator password upfront

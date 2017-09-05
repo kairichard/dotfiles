@@ -12,5 +12,5 @@ before_install:
 
 script:
   - lace fetch . --name=test
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then travis_wait 40 lace setup test osx --force         ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then lace setup test osx --force         ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then lace setup test ubuntu --force                   ; fi

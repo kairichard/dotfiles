@@ -184,8 +184,6 @@ inoremap jj <ESC>
 "inoremap <down> <nop>
 "inoremap <left> <nop>
 "inoremap <right> <nop>
-"nnoremap j gj
-"nnoremap k gk
 
 " guess who ignors wildignore
 let NERDTreeIgnore = ['\.pyc$']
