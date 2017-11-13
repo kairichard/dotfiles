@@ -51,6 +51,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 if [ -f ~/git/git-completion.bash ]; then
     . ~/git/git-completion.bash
 fi
@@ -92,3 +94,10 @@ fi
 if [ -f $HOME/.bis.profile ]; then
    source $HOME/.bis.profile
 fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash

@@ -51,6 +51,7 @@ NeoBundle 'sjl/gundo.vim'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'AndrewRadev/sideways.vim'
+NeoBundle 'posva/vim-vue'
 
 " YCM does not work on darwin
 if has("unix")

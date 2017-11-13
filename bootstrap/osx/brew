@@ -32,6 +32,7 @@ brew install homebrew/binary/kwm
 brew install vim --with-python
 brew install mawk
 brew install openssh
+brew install bash-completion
 
 # Fixes python pip
 brew unlink python && brew link python
