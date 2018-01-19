@@ -123,16 +123,26 @@ let g:ruby_debugger_builtin_sender = 0
 "endif
 
 let g:ctrlp_map = 'tt'
+let g:ctrlp_root_markers = ['.ctrlp']
 
 let g:syntastic_auto_loc_list=0
 let g:syntastic_loc_list_height=0
 let g:syntastic_auto_jump=0
-let g:ctrlp_root_markers = ['.ctrlp']
 let g:syntastic_mode_map = { 'mode': 'active',
-                              \ 'active_filetypes': ['css'] }
+                           \ 'active_filetypes': ['css'],
+                           \ 'passive_filetypes': ['python']}
+
+let g:syntastic_python_checkers = ['pylint', 'flake8']
+let g:syntastic_python_pylint_args = ['--rcfile=.pylint']
+let g:syntastic_python_flake8_args = ['--config=.flake8']
+let g:syntastic_aggregate_errors = 1
+
+let g:pymode_breakpoint_cmd = 'import pudb; pu.db()'
+let g:pymode_lint = 0
 
 nmap <leader>t :CtrlPtjump<CR>
 nmap <leader>ct :CtrlPTag<CR>
+nmap <leader>c :SyntasticCheck<CR>
 
 
 " Set Search Highlight to reverse color
@@ -141,7 +151,7 @@ hi Search cterm=reverse
 hi Search term=reverse
 
 " Some remapping/shortcuts
-nmap <silent> ff :FufBuffer<CR>
+nmap <silent> ff :CtrlPBuffer<CR>
 nmap <leader>l :set list!<CR>
 nnoremap <C-S-p> :NERDTree<CR>
 nnoremap <leader>sl :set hlsearch! hlsearch?<CR>
