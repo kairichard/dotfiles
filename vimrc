@@ -23,7 +23,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'Lokaltog/vim-powerline'
+NeoBundle 'vim-airline/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'Raimondi/delimitMate.git'
 NeoBundle 'godlygeek/tabular'
 NeoBundle 'henrik/vim-indexed-search.git'
@@ -137,8 +138,17 @@ let g:syntastic_python_pylint_args = ['--rcfile=.pylint']
 let g:syntastic_python_flake8_args = ['--config=.flake8']
 let g:syntastic_aggregate_errors = 1
 
-let g:pymode_breakpoint_cmd = 'import pudb; pu.db()'
+let g:pymode_breakpoint_cmd = 'import pudb; pu.db'
 let g:pymode_lint = 0
+
+let g:airline_theme='luna'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
+
+let g:ctrlp_mru_files = 1              " Enable Most Recently Used files feature
+let g:ctrlp_dotfiles = 1               "  show (.) dotfiles in match list
+let g:ctrlp_dont_split = 'NERD_tree_2' " don't split these buffers
 
 nmap <leader>t :CtrlPtjump<CR>
 nmap <leader>ct :CtrlPTag<CR>
