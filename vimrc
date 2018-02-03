@@ -31,8 +31,6 @@ NeoBundle 'henrik/vim-indexed-search.git'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'ivalkeen/vim-ctrlp-tjump'
 NeoBundle 'jnwhiteh/vim-golang'
-NeoBundle 'kairichard/l9_vim_mirror.git'
-NeoBundle 'kairichard/vim_buffer_close.git'
 NeoBundle 'kien/ctrlp.vim.git'
 NeoBundle 'klen/python-mode'
 NeoBundle 'majutsushi/tagbar'
@@ -184,7 +182,7 @@ vnoremap ,. <Esc>
 " *after* we have already opened it. Super useful.
 cnoremap w!! w !sudo tee % >/dev/null
 
-cmap wb Bclose
+cmap wb bd
 cmap W w
 
 " Split window navigation
