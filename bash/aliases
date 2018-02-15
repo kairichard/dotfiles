@@ -1,17 +1,14 @@
 # -------- SYSTEM ---------
 alias reload='source ~/.bash_profile && echo "Reloaded ~/.bash_profile"'
 alias can_has='sudo apt-get install'
-alias ll='ls -laG'
-alias l='ls -lahG'
+alias ll='exa -l'
+alias l='exa -l --git'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
 
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias cd..='cd ..'
-# -------- SSH ---------
-alias htdev='ssh cs@entwicklung.hightext.de'
-alias cmsp='ssh root@cmsp.hightext.de -i ~/.ssh/hightext_cmsp'
 
 # -------- GIT ---------
 alias gs='git status'

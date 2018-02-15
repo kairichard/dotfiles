@@ -51,6 +51,8 @@ NeoBundle 'tpope/vim-rails.git'
 NeoBundle 'tpope/vim-repeat.git'
 NeoBundle 'tpope/vim-surround.git'
 NeoBundle 'vim-ruby/vim-ruby.git'
+NeoBundle 'qpkorr/vim-bufkill'
+NeoBundle 'luochen1990/rainbow'
 
 " YCM does not work on darwin
 if has("unix")
@@ -148,6 +150,8 @@ let g:ctrlp_mru_files = 1              " Enable Most Recently Used files feature
 let g:ctrlp_dotfiles = 1               "  show (.) dotfiles in match list
 let g:ctrlp_dont_split = 'NERD_tree_2' " don't split these buffers
 
+let g:rainbow_active = 0
+
 nmap <leader>t :CtrlPtjump<CR>
 nmap <leader>ct :CtrlPTag<CR>
 nmap <leader>c :SyntasticCheck<CR>
@@ -182,8 +186,7 @@ vnoremap ,. <Esc>
 " *after* we have already opened it. Super useful.
 cnoremap w!! w !sudo tee % >/dev/null
 
-cmap wb bd
-cmap W w
+cmap wb BW
 
 " Split window navigation
 nnoremap <C-S-Left>  <C-w>h
