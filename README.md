@@ -1,4 +1,5 @@
 ## .dotfiles [![Build Status](https://travis-ci.org/kairichard/dotfiles.svg?branch=master)](https://travis-ci.org/kairichard/dotfiles)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkairichard%2Fdotfiles.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkairichard%2Fdotfiles?ref=badge_shield)
 
 <img src="https://github.com/kairichard/dotfiles/raw/master/preview.png" width=600>
 iterm2 with tomorrow night as theme.
@@ -22,3 +23,7 @@ This only works when you have [lace](https://github.com/kairichard/lace) install
 ```
 gem install lace
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkairichard%2Fdotfiles.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkairichard%2Fdotfiles?ref=badge_large)
