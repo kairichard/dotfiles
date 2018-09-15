@@ -3,6 +3,7 @@ homepage: https://github.com/kairichard/dotfiles/
 version: 1.0
 base: &basic
   - ackrc
+  - ripgreprc
   - bash
   - bash_profile
   - bashrc

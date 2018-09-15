@@ -141,6 +141,12 @@ let g:syntastic_aggregate_errors = 1
 let g:pymode_breakpoint_cmd = 'import pudb; pu.db'
 let g:pymode_lint = 0
 
+let g:ackprg = 'rp --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
+
 let g:airline_theme='luna'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
@@ -175,6 +181,7 @@ nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>l
 " Fast saving
 nnoremap <leader>w :w!<cr>
+nnoremap <leader>z :BW<cr>
 
 " with this, we can now type ",." to exit out of insert mode
 " if we really wanted to type ",.", then just type one char, wait half a sec,

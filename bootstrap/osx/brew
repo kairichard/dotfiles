@@ -35,6 +35,7 @@ brew install openssh
 brew install git
 brew install bash-completion
 brew install exa
+brew install ripgrep
 
 # Fixes python pip
 brew unlink python && brew link python
