@@ -141,7 +141,7 @@ let g:syntastic_aggregate_errors = 1
 let g:pymode_breakpoint_cmd = 'import pudb; pu.db'
 let g:pymode_lint = 0
 
-let g:ackprg = 'rp --vimgrep --smart-case'
+let g:ackprg = 'rg --vimgrep --smart-case'
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
