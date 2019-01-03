@@ -37,6 +37,9 @@ brew install bash-completion
 brew install exa
 brew install ripgrep
 brew install hstr
+brew install tldr
+brew install xsv
+brew install bat
 
 # Fixes python pip
 brew unlink python && brew link python
