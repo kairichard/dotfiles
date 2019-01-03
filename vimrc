@@ -193,8 +193,6 @@ vnoremap ,. <Esc>
 " *after* we have already opened it. Super useful.
 cnoremap w!! w !sudo tee % >/dev/null
 
-cmap wb BW
-
 " Split window navigation
 nnoremap <C-S-Left>  <C-w>h
 nnoremap <C-S-Down>  <C-w>j
