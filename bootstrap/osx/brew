@@ -69,6 +69,8 @@ installcask alfred
 installcask flux
 installcask docker
 installcask font-hack
+installcask enpass
+installcask spotify
 
 
 echo "Installing others"
