@@ -51,21 +51,17 @@ function installcask() {
 installcask imagealpha
 installcask imageoptim
 installcask iterm2
-installcask macvim
 installcask sequel-pro
 installcask the-unarchiver
 installcask virtualbox
 installcask vlc
-installcask atom
 installcask google-backup-and-sync
-installcask apache-directory-studio
 installcask skype
 if [[ "$CI" != "true" ]]; then installcask microsoft-office ; fi
 installcask microsoft-teams
-installcask skype-for-business
 installcask pycharm
+installcask webstorm
 installcask whatsapp
-installcask adobe-creative-cloud
 installcask macpass
 installcask spectacle
 installcask alfred
@@ -74,7 +70,10 @@ installcask docker
 installcask font-hack
 installcask enpass
 installcask spotify
-
+installcask visual-studio-code
+installcask slack
+installcask firefox
+installcask onedrive
 
 echo "Installing others"
 sudo pip install iterminator
