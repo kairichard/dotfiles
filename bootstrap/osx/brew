@@ -40,6 +40,7 @@ brew install hstr
 brew install tldr
 brew install xsv
 brew install bat
+brew install golang
 
 # Fixes python pip
 brew unlink python && brew link python
@@ -74,6 +75,7 @@ installcask visual-studio-code
 installcask slack
 installcask firefox
 installcask onedrive
+installcask rcdefaultapp
 
 echo "Installing others"
 sudo pip install iterminator
