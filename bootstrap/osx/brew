@@ -41,6 +41,7 @@ brew install tldr
 brew install xsv
 brew install bat
 brew install golang
+brew install dnsmasq
 
 # Fixes python pip
 brew unlink python && brew link python
