@@ -41,6 +41,8 @@ brew install tldr
 brew install xsv
 brew install bat
 brew install golang
+
+# https://www.stevenrombauts.be/2018/01/use-dnsmasq-instead-of-etc-hosts/
 brew install dnsmasq
 
 # Fixes python pip
