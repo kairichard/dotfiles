@@ -1,6 +1,6 @@
 [user]
 	name = Kai Richard Koenig
-	email = kai.koenig@paessler.com
+	email = kai.richard.koenig@gmail.com
 [core]
 	editor = vim -f
 	excludesfile = ~/.gitignore
