@@ -235,8 +235,8 @@ endif
 
 "hi Statusline gui=sn
 " Fix Vims regexp-handling to be more like Perl
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 
 """ get from gb website's vimrc""""""""""""""""""""""""""""""""""""""
 function! CurDir()

@@ -46,7 +46,6 @@ osx: &osx
 
   setup:
     - <%= @package_path/"bootstrap/osx/brew" %>
-    - <%= @package_path/"bootstrap/osx/defaults" %>
     - <%= @package_path/"bootstrap/osx/fonts" %>
     - *powerline
     - *vim_bundles
