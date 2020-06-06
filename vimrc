@@ -53,6 +53,7 @@ NeoBundle 'tpope/vim-surround.git'
 NeoBundle 'vim-ruby/vim-ruby.git'
 NeoBundle 'qpkorr/vim-bufkill'
 NeoBundle 'luochen1990/rainbow'
+NeoBundle 'arcticicestudio/nord-vim'
 
 " YCM does not work on darwin
 if has("unix")
@@ -109,7 +110,7 @@ filetype indent on  " Enable filetype-specific indenting
 filetype plugin on  " Enable filetype-specific plugins
 
 syntax on
-colorscheme tomorrow_night
+colorscheme nord
 set listchars=tab:▸\ ,eol:¬
 
 let mapleader = ' '
