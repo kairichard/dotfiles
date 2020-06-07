@@ -31,7 +31,7 @@ NeoBundle 'henrik/vim-indexed-search.git'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'ivalkeen/vim-ctrlp-tjump'
 NeoBundle 'jnwhiteh/vim-golang'
-NeoBundle 'kien/ctrlp.vim.git'
+NeoBundle 'ctrlpvim/ctrlp.vim.git'
 NeoBundle 'klen/python-mode'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'mhinz/vim-signify'
@@ -54,16 +54,10 @@ NeoBundle 'vim-ruby/vim-ruby.git'
 NeoBundle 'qpkorr/vim-bufkill'
 NeoBundle 'luochen1990/rainbow'
 NeoBundle 'arcticicestudio/nord-vim'
-
-" YCM does not work on darwin
-if has("unix")
-  let s:uname = system("echo -ne $SUPERTAB")
-  if s:uname == "1"
-    NeoBundle 'ervandew/supertab'
-  else
-    NeoBundle 'Valloric/YouCompleteMe'
-  endif
-endif
+NeoBundle 'mikewadsten/vim-gitwildignore'
+NeoBundle 'numirias/semshi'
+NeoBundle 'dense-analysis/ale'
+NeoBundle 'ervandew/supertab'
 
 call neobundle#end()
 
@@ -110,6 +104,7 @@ filetype indent on  " Enable filetype-specific indenting
 filetype plugin on  " Enable filetype-specific plugins
 
 syntax on
+"set termguicolors
 colorscheme nord
 set listchars=tab:▸\ ,eol:¬
 
@@ -156,7 +151,7 @@ let g:airline#extensions#tabline#enabled = 0
 let g:ctrlp_mru_files = 1              " Enable Most Recently Used files feature
 let g:ctrlp_dotfiles = 1               "  show (.) dotfiles in match list
 let g:ctrlp_dont_split = 'NERD_tree_2' " don't split these buffers
-
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']  " ignore everything that is listed in .gitignore
 let g:rainbow_active = 0
 
 nmap <leader>t :CtrlPtjump<CR>
@@ -170,7 +165,7 @@ hi Search cterm=reverse
 hi Search term=reverse
 
 " Some remapping/shortcuts
-nmap <silent> ff :CtrlPBuffer<CR>
+nmap <silent> ff :CtrlPMRU<CR>
 nmap <leader>l :set list!<CR>
 nnoremap <C-S-p> :NERDTree<CR>
 nnoremap <leader>sl :set hlsearch! hlsearch?<CR>
