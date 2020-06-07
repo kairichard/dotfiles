@@ -31,9 +31,6 @@ ruby: &ruby
 vim_bundles: &vim_bundles
   - <%= @package_path/"bootstrap/vim/update_bundles.sh" %>
 
-vim_ycm: &vim_ycm
-  - <%= @package_path/"bootstrap/vim/ycm.sh" %>
-
 powerline: &powerline
   - <%= @package_path/"bootstrap/powerline/install.sh" %>
 
@@ -49,7 +46,6 @@ osx: &osx
     - <%= @package_path/"bootstrap/osx/fonts" %>
     - *powerline
     - *vim_bundles
-    - *vim_ycm
 
   post:
     update:
@@ -65,7 +61,6 @@ ubuntu: &ubuntu
     - <%= @package_path/"bootstrap/ubuntu/debian_pkgs.sh" %>
     - *powerline
     - *vim_bundles
-    - *vim_ycm
 
   post:
     update:
@@ -83,7 +78,6 @@ ubuntu-desktop: &ubuntu-desktop
     - <%= @package_path/"bootstrap/ubuntu-desktop/debian_pkgs.sh" %>
     - *powerline
     - *vim_bundles
-    - *vim_ycm
 
   post:
     update:
