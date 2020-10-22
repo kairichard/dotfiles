@@ -32,14 +32,11 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'ivalkeen/vim-ctrlp-tjump'
 NeoBundle 'jnwhiteh/vim-golang'
 NeoBundle 'ctrlpvim/ctrlp.vim.git'
-NeoBundle 'klen/python-mode'
-NeoBundle 'majutsushi/tagbar'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'mileszs/ack.vim.git'
 NeoBundle 'posva/vim-vue'
 NeoBundle 'scrooloose/nerdcommenter.git'
 NeoBundle 'scrooloose/nerdtree.git'
-NeoBundle 'scrooloose/syntastic.git'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'timcharper/textile.vim.git'
 NeoBundle 'tpope/vim-cucumber.git'
@@ -57,7 +54,10 @@ NeoBundle 'arcticicestudio/nord-vim'
 NeoBundle 'mikewadsten/vim-gitwildignore'
 NeoBundle 'numirias/semshi'
 NeoBundle 'dense-analysis/ale'
-NeoBundle 'ervandew/supertab'
+NeoBundle 'Shougo/deoplete.nvim'
+NeoBundle 'deoplete-plugins/deoplete-jedi'
+NeoBundle 'moll/vim-bbye'
+NeoBundle 'davidhalter/jedi-vim'
 
 call neobundle#end()
 
@@ -110,32 +110,26 @@ set listchars=tab:▸\ ,eol:¬
 
 let mapleader = ' '
 
-let g:pymode_rope_regenerate_on_write = 0
 let g:fuf_buffer_keyDelete = '<C-d>'
 let g:ruby_debugger_builtin_sender = 0
 
-" Hide snippet_complete marker.
-"if has('conceal')
-"set conceallevel=2 concealcursor=i
-"endif
+let g:jedi#completions_enabled = 0
+let g:deoplete#enable_at_startup = 1
+
+set completeopt-=preview
+
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+let g:ale_python_auto_pipenv = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\}
+
 
 let g:ctrlp_map = 'tt'
 let g:ctrlp_root_markers = ['.ctrlp']
-
-let g:syntastic_auto_loc_list=0
-let g:syntastic_loc_list_height=0
-let g:syntastic_auto_jump=0
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'active_filetypes': ['css'],
-                           \ 'passive_filetypes': ['python']}
-
-let g:syntastic_python_checkers = ['pylint', 'flake8']
-let g:syntastic_python_pylint_args = ['--rcfile=.pylint']
-let g:syntastic_python_flake8_args = ['--config=.flake8']
-let g:syntastic_aggregate_errors = 1
-
-let g:pymode_breakpoint_cmd = 'import pudb; pu.db'
-let g:pymode_lint = 0
 
 let g:ackprg = 'rg --vimgrep --smart-case'
 cnoreabbrev ag Ack
@@ -145,10 +139,11 @@ cnoreabbrev AG Ack
 
 let g:airline_theme='luna'
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#ale#enabled = 1
 
 let g:ctrlp_mru_files = 1              " Enable Most Recently Used files feature
+let g:ctrlp_mruf_relative = 1          " Only show files in the current directory
 let g:ctrlp_dotfiles = 1               "  show (.) dotfiles in match list
 let g:ctrlp_dont_split = 'NERD_tree_2' " don't split these buffers
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']  " ignore everything that is listed in .gitignore
@@ -156,7 +151,6 @@ let g:rainbow_active = 0
 
 nmap <leader>t :CtrlPtjump<CR>
 nmap <leader>ct :CtrlPTag<CR>
-nmap <leader>c :SyntasticCheck<CR>
 
 
 " Set Search Highlight to reverse color
@@ -165,7 +159,8 @@ hi Search cterm=reverse
 hi Search term=reverse
 
 " Some remapping/shortcuts
-nmap <silent> ff :CtrlPMRU<CR>
+nmap <silent> bb :CtrlPMRU<CR>
+nmap <silent> ff :CtrlPBuffer<CR>
 nmap <leader>l :set list!<CR>
 nnoremap <C-S-p> :NERDTree<CR>
 nnoremap <leader>sl :set hlsearch! hlsearch?<CR>
@@ -277,7 +272,6 @@ autocmd FileType gitcommit setlocal spell spelllang=en_us
 " Subversion commits.
 autocmd FileType svn       setlocal spell spelllang=en_us
 
-autocmd FileType python setlocal completeopt-=preview
 
 "set secure          " disable shellexcutions
 highlight NonText guifg=#4a4a59
@@ -313,25 +307,6 @@ highlight SignifySignChange cterm=bold ctermbg=None  ctermfg=227
 highlight SignifyLineAdd cterm=bold ctermbg=None  ctermfg=119
 highlight SignifyLineDelete cterm=bold ctermbg=None  ctermfg=167
 highlight SignifyLineChange cterm=bold ctermbg=None  ctermfg=227
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                 Pymode                                  "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:pymode = 1
-let g:pymode_options = 0
-let g:pymode_folding = 0
-let g:pymode_motion = 1
-let g:pymode_virtualenv = 0
-let g:pymode_run = 0
-let g:pymode_breakpoint = 1
-let g:pymode_lint = 0
-let g:pymode_rope = 1
-let g:pymode_rope_completion = 0
-let g:pymode_rope_complete_on_dot = 0
-let g:pymode_rope_goto_definition_cmd = 'e'
-let g:pymode_syntax = 1
-let g:pymode_syntax_all = 1
-let g:pymode_doc = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Ultrasnips                              "
