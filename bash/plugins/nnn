@@ -1,0 +1,4 @@
+export NNN_PLUG="p:preview-tui"
+export NNN_FCOLORS='c1e2272e006033f7c6d6abc4'
+export NNN_FIFO='/tmp/nnn.fifo'
+export NNN_TMPFILE="${XDG_CONFIG_HOME:-$HOME/.config}/nnn/.lastd"
