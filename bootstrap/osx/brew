@@ -42,6 +42,7 @@ brew install tldr
 brew install xsv
 brew install bat
 brew install golang
+brew install neovim
 
 # https://www.stevenrombauts.be/2018/01/use-dnsmasq-instead-of-etc-hosts/
 brew install dnsmasq
@@ -60,12 +61,8 @@ installcask sequel-pro
 installcask the-unarchiver
 installcask virtualbox
 installcask vlc
-installcask google-backup-and-sync
-installcask skype
 if [[ "$CI" != "true" ]]; then installcask microsoft-office ; fi
 installcask microsoft-teams
-installcask pycharm
-installcask webstorm
 installcask whatsapp
 installcask macpass
 installcask spectacle
@@ -80,6 +77,19 @@ installcask slack
 installcask firefox
 installcask onedrive
 installcask rcdefaultapp
+installcask moom
+installcask timing
+installcask parallels
+installcask tableplus
+installcask discord
+installcask signal
+installcask tresorit
+installcask obs
+installcask obs-virtualcam
+installcask gifox
+installcask zoom
+installcask webex
+installcask grammarly
 
 echo "Installing others"
 sudo pip install iterminator
