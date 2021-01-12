@@ -1,6 +1,7 @@
 [user]
-	name = Kai Richard Koenig
+	name = Kai Richard König
 	email = kai.richard.koenig@gmail.com
+	signingkey = 1C8CD3503B7C1BFB
 [core]
 	editor = vim -f
 	excludesfile = ~/.gitignore
@@ -28,3 +29,5 @@
 	sslVerify = false
 [push]
 	default = current
+[commit]
+	gpgsign = true

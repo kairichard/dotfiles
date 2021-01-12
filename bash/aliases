@@ -1,8 +1,9 @@
 # -------- SYSTEM ---------
 alias reload='source ~/.bash_profile && echo "Reloaded ~/.bash_profile"'
-alias ll='exa -l -a'
+alias lll='exa -l -a'
 alias l='exa -l -a --git'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
+alias ll='nnn -de'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -11,7 +12,7 @@ alias cd..='cd ..'
 
 # -------- GIT ---------
 alias gs='git status'
-alias ga='git add .'
+alias gap='git add -p'
 
 # -------- APPS ---------
 alias gsd='get-shit-done'

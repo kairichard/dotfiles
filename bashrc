@@ -74,12 +74,11 @@ source ~/.bash/plattforms/$PLATTFROM
 
 # APPEND PATHS AT THE END
 export PATH="$HOME/.bash/bin:$PATH"
-export EDITOR=$(which vim)
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-active_plugins=("rbenv" "direnv" "pyenv" "nodenv")
+active_plugins=("rbenv" "direnv" "pyenv" "nodenv", "nnn")
 
 for plugin in ${active_plugins[@]}; do
   [[ -f $HOME/.bash/plugins/$plugin ]] && source $HOME/.bash/plugins/$plugin;
@@ -116,4 +115,3 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
-

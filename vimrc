@@ -11,6 +11,8 @@ if has('vim_starting')
   " Required:
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
+
+let g:python3_host_prog = '/Users/kai/.pyenv/versions/3.7.6/bin/python3'
 " Required
 call neobundle#begin(expand('~/.vim/bundle/'))
 
@@ -20,7 +22,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " My bundles here:
 " original repos on GitHub
-
 NeoBundle 'AndrewRadev/sideways.vim'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'vim-airline/vim-airline'
@@ -58,6 +59,10 @@ NeoBundle 'Shougo/deoplete.nvim'
 NeoBundle 'deoplete-plugins/deoplete-jedi'
 NeoBundle 'moll/vim-bbye'
 NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'Shougo/deoppet.nvim'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'honza/vim-snippets'
 
 call neobundle#end()
 
@@ -116,6 +121,19 @@ let g:ruby_debugger_builtin_sender = 0
 let g:jedi#completions_enabled = 0
 let g:deoplete#enable_at_startup = 1
 
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
 set completeopt-=preview
 
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -159,7 +177,7 @@ hi Search cterm=reverse
 hi Search term=reverse
 
 " Some remapping/shortcuts
-nmap <silent> bb :CtrlPMRU<CR>
+nmap <silent> mf :CtrlPMRU<CR>
 nmap <silent> ff :CtrlPBuffer<CR>
 nmap <leader>l :set list!<CR>
 nnoremap <C-S-p> :NERDTree<CR>
