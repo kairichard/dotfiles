@@ -43,6 +43,7 @@ brew install xsv
 brew install bat
 brew install golang
 brew install neovim
+brew install gpg
 
 # https://www.stevenrombauts.be/2018/01/use-dnsmasq-instead-of-etc-hosts/
 brew install dnsmasq

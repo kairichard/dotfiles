@@ -7,7 +7,6 @@ base: &basic
   - bash
   - bash_profile
   - bashrc
-  - tmux
   - tmux.conf
   - vim
   - vimrc
