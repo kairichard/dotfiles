@@ -43,6 +43,7 @@ osx: &osx
   setup:
     - <%= @package_path/"bootstrap/osx/brew" %>
     - <%= @package_path/"bootstrap/osx/fonts" %>
+    - <%= @package_path/"bootstrap/cmd/tmux" %>
     - *powerline
     - *vim_bundles
 
