@@ -27,8 +27,6 @@ NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'vim-airline/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'Raimondi/delimitMate.git'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'henrik/vim-indexed-search.git'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'ivalkeen/vim-ctrlp-tjump'
 NeoBundle 'jnwhiteh/vim-golang'
@@ -39,11 +37,9 @@ NeoBundle 'posva/vim-vue'
 NeoBundle 'scrooloose/nerdcommenter.git'
 NeoBundle 'scrooloose/nerdtree.git'
 NeoBundle 'sjl/gundo.vim'
-NeoBundle 'timcharper/textile.vim.git'
 NeoBundle 'tpope/vim-cucumber.git'
 NeoBundle 'tpope/vim-fugitive.git'
 NeoBundle 'tpope/vim-git.git'
-NeoBundle 'tpope/vim-haml.git'
 NeoBundle 'tpope/vim-markdown.git'
 NeoBundle 'tpope/vim-rails.git'
 NeoBundle 'tpope/vim-repeat.git'
@@ -115,9 +111,6 @@ set listchars=tab:▸\ ,eol:¬
 
 let mapleader = ' '
 
-let g:fuf_buffer_keyDelete = '<C-d>'
-let g:ruby_debugger_builtin_sender = 0
-
 let g:jedi#completions_enabled = 0
 let g:deoplete#enable_at_startup = 1
 
@@ -146,8 +139,6 @@ let g:ale_fixers = {
 \}
 
 
-let g:ctrlp_map = 'tt'
-let g:ctrlp_root_markers = ['.ctrlp']
 
 let g:ackprg = 'rg --vimgrep --smart-case'
 cnoreabbrev ag Ack
@@ -155,11 +146,13 @@ cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
 
-let g:airline_theme='luna'
+let g:airline_theme='nord'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#ale#enabled = 1
 
+let g:ctrlp_map = 'tt'
+let g:ctrlp_root_markers = ['.ctrlp']
 let g:ctrlp_mru_files = 1              " Enable Most Recently Used files feature
 let g:ctrlp_mruf_relative = 1          " Only show files in the current directory
 let g:ctrlp_dotfiles = 1               "  show (.) dotfiles in match list
@@ -179,12 +172,16 @@ hi Search term=reverse
 " Some remapping/shortcuts
 nmap <silent> mf :CtrlPMRU<CR>
 nmap <silent> ff :CtrlPBuffer<CR>
-nmap <leader>l :set list!<CR>
-nnoremap <C-S-p> :NERDTree<CR>
-nnoremap <leader>sl :set hlsearch! hlsearch?<CR>
 nnoremap <leader>. :CtrlPTag<cr>
+
+nmap <leader>l :set list!<CR>
+
+nnoremap <C-S-p> :NERDTree<CR>
+
+nnoremap <leader>sl :set hlsearch! hlsearch?<CR>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 nnoremap <leader>d: tag <C-R><C-W><CR>
+
 " Open split windo on jump in it
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>h <C-w>s<C-w>l
@@ -221,57 +218,6 @@ inoremap jj <ESC>
 "inoremap <left> <nop>
 "inoremap <right> <nop>
 
-" guess who ignors wildignore
-let NERDTreeIgnore = ['\.pyc$']
-
-"let g:Powerline_symbols = 'fancy'
-
-if has("gui_running")
-  colorscheme tomorrow_night
-  set fuopt=maxvert,maxhorz " Use maxinum screen space in fullscreen mode
-
-  " set default size: 90x35
-  set columns=150
-  set lines=35
-  " No menus and no toolbar
-  set guioptions-=m
-  set guioptions-=T
-  " No scrollbar
-  set guioptions+=LlRrb
-  set guioptions-=LlRrb
-endif
-
-
-"hi Statusline gui=sn
-" Fix Vims regexp-handling to be more like Perl
-"nnoremap / /\v
-"vnoremap / /\v
-
-""" get from gb website's vimrc""""""""""""""""""""""""""""""""""""""
-function! CurDir()
-  let curdir = substitute(getcwd(), $HOME, "~/", "g")
-  return curdir
-endfunction
-
-if has('cmdline_info')
-  set ruler                   " show the ruler
-  set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " a ruler on steroids
-  set showcmd                 " show partial commands in status line and
-  " selected characters/lines in visual mode
-endif
-
-if has('statusline')
-  set laststatus=2
-
-  " Broken down into easily includeable segments
-  set statusline=%<%f\    " Filename
-  set statusline+=%w%h%m%r " Options
-  set statusline+=%{fugitive#statusline()} "  Git Hotness
-  set statusline+=\ [%{&ff}/%Y]            " filetype
-  set statusline+=\ [%{getcwd()}]          " current dir
-  set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
-
 
 " Removes trailing spaces
 function! TrimWhiteSpace()
@@ -287,22 +233,14 @@ autocmd BufWritePre     * :call TrimWhiteSpace()
 " Git commits.
 autocmd FileType gitcommit setlocal spell spelllang=en_us
 
-" Subversion commits.
-autocmd FileType svn       setlocal spell spelllang=en_us
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"                                 NerdTree                                 "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
-"set secure          " disable shellexcutions
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
-
-if v:version >= 704
-  " The new Vim regex engine is currently slooooow as hell which makes syntax
-  " highlighting slow, which introduces typing latency.
-  " Consider removing this in the future when the new regex engine becomes
-  " faster.
-  set regexpengine=1
-endif
-
+highlight! link NERDTreeFlags NERDTreeDir
+" guess who ignors wildignore
+let NERDTreeIgnore = ['\.pyc$']
+"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Signify                                 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -336,6 +274,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                                 Gundo                                   "
