@@ -59,6 +59,12 @@ NeoBundle 'Shougo/deoppet.nvim'
 NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'honza/vim-snippets'
+NeoBundle 'hashivim/vim-terraform'
+NeoBundle 'juliosueiras/vim-terraform-completion'
+"NeoBundle 'kyazdani42/nvim-web-devicons' " for file icons
+"NeoBundle 'kyazdani42/nvim-tree.lua'
+NeoBundle 'ryanoasis/vim-devicons'
+NeoBundle 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 call neobundle#end()
 
@@ -138,6 +144,15 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \}
 
+" (Optional)Hide Info(Preview) window after completions
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" (Optional) Default: 0, enable(1)/disable(0) plugin's keymapping
+let g:terraform_completion_keys = 1
+
+" (Optional) Default: 1, enable(1)/disable(0) terraform module registry completion
+let g:terraform_registry_module_completion = 0
 
 
 let g:ackprg = 'rg --vimgrep --smart-case'
