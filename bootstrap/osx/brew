@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 echo 'brewing our machine'
-brew tap caskroom/cask
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
+brew tap homebrew/cask
 # Make sure we’re using the latest Homebrew
 brew update
 
@@ -27,10 +27,10 @@ brew install ruby-build
 brew install autojump
 brew install direnv
 brew install ncmpcpp
-brew install weechat --with-python --with-perl --with-ruby
+brew install weechat --with-perl --with-ruby
 brew install dos2unix
 brew install homebrew/binary/kwm
-brew install vim --with-python
+brew install vim
 brew install mawk
 brew install openssh
 brew install git
@@ -52,7 +52,7 @@ brew install dnsmasq
 brew unlink python && brew link python
 
 function installcask() {
-        brew cask install "${@}"
+        brew install "${@}"
 }
 
 installcask imagealpha
@@ -93,4 +93,4 @@ installcask webex
 installcask grammarly
 
 echo "Installing others"
-sudo pip install iterminator
+sudo pip3 install iterminator
