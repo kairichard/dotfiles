@@ -118,5 +118,6 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 export CLICOLOR=1
 
+export GPG_TTY=$(tty)
 # Set colors to match iTerm2 Terminal Colors
 export TERM=xterm-256color
