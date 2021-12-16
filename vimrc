@@ -190,7 +190,7 @@ nnoremap <leader>. :CtrlPTag<cr>
 
 nmap <leader>l :set list!<CR>
 
-nnoremap <C-S-p> :NERDTree<CR>
+nnoremap <leader>p :NERDTree<CR>
 
 nnoremap <leader>sl :set hlsearch! hlsearch?<CR>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
