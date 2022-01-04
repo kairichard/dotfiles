@@ -1,4 +1,5 @@
 echo "Updating Vim-Bundles"
-~/.vim/bundle/neobundle.vim/bin/neoinstall
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 echo "DONE"
 
