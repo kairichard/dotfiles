@@ -12,63 +12,73 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-let g:python3_host_prog = '/Users/kai/.pyenv/versions/3.7.6/bin/python3'
 " Required
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " My bundles here:
 " original repos on GitHub
-NeoBundle 'AndrewRadev/sideways.vim'
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'Raimondi/delimitMate.git'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'ivalkeen/vim-ctrlp-tjump'
-NeoBundle 'jnwhiteh/vim-golang'
-NeoBundle 'ctrlpvim/ctrlp.vim.git'
-NeoBundle 'mhinz/vim-signify'
-NeoBundle 'mileszs/ack.vim.git'
-NeoBundle 'posva/vim-vue'
-NeoBundle 'scrooloose/nerdcommenter.git'
-NeoBundle 'scrooloose/nerdtree.git'
-NeoBundle 'sjl/gundo.vim'
-NeoBundle 'tpope/vim-cucumber.git'
-NeoBundle 'tpope/vim-fugitive.git'
-NeoBundle 'tpope/vim-git.git'
-NeoBundle 'tpope/vim-markdown.git'
-NeoBundle 'tpope/vim-rails.git'
-NeoBundle 'tpope/vim-repeat.git'
-NeoBundle 'tpope/vim-surround.git'
-NeoBundle 'vim-ruby/vim-ruby.git'
-NeoBundle 'qpkorr/vim-bufkill'
-NeoBundle 'luochen1990/rainbow'
-NeoBundle 'arcticicestudio/nord-vim'
-NeoBundle 'mikewadsten/vim-gitwildignore'
-NeoBundle 'numirias/semshi'
-NeoBundle 'dense-analysis/ale'
-NeoBundle 'Shougo/deoplete.nvim'
-NeoBundle 'deoplete-plugins/deoplete-jedi'
-NeoBundle 'moll/vim-bbye'
-NeoBundle 'Shougo/deoppet.nvim'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'hashivim/vim-terraform'
-NeoBundle 'juliosueiras/vim-terraform-completion'
-"NeoBundle 'kyazdani42/nvim-web-devicons' " for file icons
-"NeoBundle 'kyazdani42/nvim-tree.lua'
-NeoBundle 'ryanoasis/vim-devicons'
-NeoBundle 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'neovim/nvim-lspconfig'
 
-call neobundle#end()
+Plug 'AndrewRadev/sideways.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'Raimondi/delimitMate'
+Plug 'ivalkeen/vim-ctrlp-tjump'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mhinz/vim-signify'
+Plug 'mileszs/ack.vim'
+Plug 'posva/vim-vue'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'qpkorr/vim-bufkill'
+Plug 'luochen1990/rainbow'
+Plug 'arcticicestudio/nord-vim'
+Plug 'mikewadsten/vim-gitwildignore'
+Plug 'numirias/semshi'
+Plug 'moll/vim-bbye'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" 9000+ Snippets
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'mfussenegger/nvim-lint'
+
+" lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
+" Need to **configure separately**
+
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+
+Plug 'folke/trouble.nvim'
+
+call plug#end()
+
+lua << EOF
+  require("trouble").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+EOF
+
+lua << EOF
+require'lspconfig'.tsserver.setup{}
+EOF
 
 filetype plugin indent on     " required!
-NeoBundleCheck
 
 set ls=2            " allways show status line
 set tabstop=2       " numbers of spaces of tab character
@@ -137,6 +147,7 @@ set completeopt-=preview
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
+" This needs to be replaced
 let g:ale_python_auto_pipenv = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -163,7 +174,6 @@ cnoreabbrev AG Ack
 let g:airline_theme='nord'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#ale#enabled = 1
 
 let g:ctrlp_map = 'tt'
 let g:ctrlp_root_markers = ['.ctrlp']
@@ -190,7 +200,7 @@ nnoremap <leader>. :CtrlPTag<cr>
 
 nmap <leader>l :set list!<CR>
 
-nnoremap <C-S-p> :NERDTree<CR>
+nnoremap <leader>p :NERDTree<CR>
 
 nnoremap <leader>sl :set hlsearch! hlsearch?<CR>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>

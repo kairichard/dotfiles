@@ -22,3 +22,10 @@ This only works when you have [lace](https://github.com/kairichard/lace) install
 ```
 gem install lace
 ```
+
+### Todo
+- [ ] Rewrite vimrc into propper lua config
+- [ ] configure :telescope keybindings
+- [ ] configure :trouble keybindings
+- [ ] remove unneeded plugins and configuration.
+

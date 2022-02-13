@@ -46,6 +46,7 @@ else
 fi
 unset color_prompt force_color_prompt
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
@@ -115,3 +116,8 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
+export CLICOLOR=1
+
+export GPG_TTY=$(tty)
+# Set colors to match iTerm2 Terminal Colors
+export TERM=xterm-256color

@@ -16,6 +16,7 @@ desktop: &desktop
   - gsdrc
   - xlock
   - config/**/*
+  - gnupg/**/*
 
 vcs: &vcs
   - gitconfig
