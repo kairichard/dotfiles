@@ -31,3 +31,4 @@
 	default = current
 [commit]
 	gpgsign = true
+	template = /Users/kai/.gitmessage
