@@ -4,7 +4,7 @@
 iterm2 with tomorrow night as theme.
 
 
-### Installing 
+### Installing
 Installing is easy just fetch the packages using:
 
 ```

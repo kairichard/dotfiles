@@ -57,6 +57,9 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'mfussenegger/nvim-lint'
 
+Plug 'romgrk/nvim-treesitter-context'
+Plug 'simrat39/symbols-outline.nvim'
+
 " lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
 " Need to **configure separately**
 
@@ -75,8 +78,21 @@ lua << EOF
 EOF
 
 lua << EOF
-require'lspconfig'.tsserver.setup{}
+local lsp = require "lspconfig"
+local coq = require "coq"
+
+lsp.tsserver.setup{}
+lsp.tsserver.setup(coq.lsp_ensure_capabilities{})
+lsp.pyright.setup{}
+lsp.pyright.setup(coq.lsp_ensure_capabilities{})
+vim.g.coq_settings = {
+  auto_start = true,
+}
+
+require'treesitter-context'.setup{}
+
 EOF
+
 
 filetype plugin indent on     " required!
 
@@ -146,13 +162,6 @@ set completeopt-=preview
 
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-" This needs to be replaced
-let g:ale_python_auto_pipenv = 1
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
-\}
 
 " (Optional)Hide Info(Preview) window after completions
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
