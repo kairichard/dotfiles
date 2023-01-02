@@ -60,18 +60,16 @@ installcask imageoptim
 installcask iterm2
 installcask sequel-pro
 installcask the-unarchiver
-installcask virtualbox
 installcask vlc
 if [[ "$CI" != "true" ]]; then installcask microsoft-office ; fi
 installcask microsoft-teams
 installcask whatsapp
-installcask macpass
+installcask bitwarden
 installcask spectacle
 installcask alfred
 installcask flux
 installcask docker
 installcask font-hack
-installcask enpass
 installcask spotify
 installcask visual-studio-code
 installcask slack
@@ -80,7 +78,6 @@ installcask onedrive
 installcask rcdefaultapp
 installcask moom
 installcask timing
-installcask parallels
 installcask tableplus
 installcask discord
 installcask signal
@@ -91,6 +88,8 @@ installcask gifox
 installcask zoom
 installcask webex
 installcask grammarly
+installcask todoist
+installcask akiflow
 
 echo "Installing others"
 sudo pip3 install iterminator
