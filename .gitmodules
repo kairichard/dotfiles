@@ -4,9 +4,6 @@
 [submodule "resources/fonts"]
 	path = resources/fonts
 	url = https://github.com/Lokaltog/powerline-fonts.git
-[submodule "resources/fonts/powerline"]
-	path = resources/fonts/powerline
-	url = https://github.com/Lokaltog/powerline-fonts.git
 [submodule "vim/bundle/neobundle.vim"]
 	path = vim/bundle/neobundle.vim
 	url = https://github.com/Shougo/neobundle.vim
