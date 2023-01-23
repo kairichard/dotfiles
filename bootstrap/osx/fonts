@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
-cp ${CURRENT_DOTTY}/resources/fonts/envy_code_r.ttf ~/Library/Fonts/
-find ${CURRENT_DOTTY}/resources/fonts/powerline -name *.ttf | xargs -I % cp % ~/Library/Fonts/
-find ${CURRENT_DOTTY}/resources/fonts/powerline -name *.otf | xargs -I % cp % ~/Library/Fonts/
-atsutil databases -removeUser
+brew tap homebrew/cask-fonts  
+brew install font-hack
