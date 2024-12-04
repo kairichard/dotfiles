@@ -3,7 +3,7 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-
+source $HOME/.zshenv
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -70,11 +70,12 @@ export ZSH="$HOME/.oh-my-zsh"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+source $ZSH/oh-my-zsh.sh
+
 plugins=(git autojump pyenv nodenv rbenv direnv)
 
-source $ZSH/oh-my-zsh.sh
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/opt/spaceship/spaceship.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 
 # User configuration
