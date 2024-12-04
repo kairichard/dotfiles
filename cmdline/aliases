@@ -1,7 +1,7 @@
 # -------- SYSTEM ---------
 alias reload='source ~/.bash_profile && echo "Reloaded ~/.bash_profile"'
-alias lll='exa -l -a'
-alias l='exa -l -a --git'
+alias lll='eza -l -a'
+alias l='eza -l -a --git'
 alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
 alias ll='nnn -de'
 
