@@ -11,6 +11,8 @@ base: &basic
   - vim
   - vimrc
   - gitmessage
+  - gitconfig
+  - macos
 
 desktop: &desktop
   - gsdrc
@@ -30,8 +32,8 @@ macos: &macos
     - *desktop
 
   setup:
-    - <%= @package_path/"bootstrap/osx/brew" %>
-    - <%= @package_path/"bootstrap/osx/fonts" %>
+    - <%= @package_path/"bootstrap/macos/brew" %>
+    - <%= @package_path/"bootstrap/macos/fonts" %>
     - <%= @package_path/"bootstrap/cmd/tmux" %>
     - *powerline
     - *vim_bundles
