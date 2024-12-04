@@ -13,3 +13,6 @@
 [submodule "config/awesome/eminent"]
 	path = config/awesome/eminent
 	url = https://github.com/guotsuan/eminent.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = https://github.com/ohmyzsh/ohmyzsh

@@ -71,7 +71,7 @@ source /usr/local/opt/spaceship/spaceship.zsh
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump)
+plugins=(git autojump pyenv nodenv rbenv direnv)
 
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -106,8 +106,33 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-# HSTR configuration - add this to ~/.zshrc
-alias hh=hstr                               # hh to be alias for hstr
+# -------- HSTR ---------
 setopt histignorespace                      # skip cmds w/ leading space from history
 export HSTR_CONFIG=hicolor                  # get more colors
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
+
+
+# -------- SYSTEM ---------
+alias hh=hstr
+alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'''
+alias ll='nnn -de'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias cd..='cd ..'
+
+# -------- GIT ---------
+alias gs='git status'
+alias gap='git add -p'
+
+# -------- APPS ---------
+alias gsd='get-shit-done'
+alias focus='gsd work'
+alias unfocus='gsd play'
+
+
+
+for file in `ls  $HOME/.cmdline/`; do
+  [[ -f $HOME/.cmdline/$file ]] && source $HOME/.cmdline/$file;
+done

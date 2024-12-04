@@ -1,4 +1,4 @@
-SPACESHIP_PROMPT_PREFIXES_SHOW=false
+# SPACESHIP_PROMPT_PREFIXES_SHOW=false
 
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stampts section
@@ -20,7 +20,7 @@ SPACESHIP_PROMPT_ORDER=(
   julia         # Julia section
   docker        # Docker section
   aws           # Amazon Web Services section
-  venv          # virtualenv section
+  # venv          # virtualenv section
   conda         # conda virtualenv section
   # pyenv         # Pyenv section
   dotnet        # .NET section
@@ -43,3 +43,5 @@ SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_CHAR_SYMBOL="❯"
 SPACESHIP_CHAR_SUFFIX=" "
 SPACESHIP_PYTHON_SHOW=true
+SPACESHIP_HOST_SHOW="always"
+SPACESHIP_HOST_PREFIX="at "

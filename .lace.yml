@@ -4,9 +4,7 @@ version: 1.0
 base: &basic
   - ackrc
   - ripgreprc
-  - bash
-  - bash_profile
-  - bashrc
+  - cmdline
   - tmux.conf
   - vim
   - vimrc
@@ -15,11 +13,11 @@ base: &basic
   - macos
   - zshrc
   - zshenv
-  - spaceship.zsh
+  - spaceshiprc.zsh
+  - oh-my-zsh
 
 desktop: &desktop
   - gsdrc
-  - xlock
   - config/**/*
   - gnupg/**/*
 
