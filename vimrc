@@ -135,8 +135,12 @@ filetype on         " Enable filetype detection
 filetype indent on  " Enable filetype-specific indenting
 filetype plugin on  " Enable filetype-specific plugins
 
+set nocompatible
+if (has("termguicolors"))
+  set termguicolors
+endif
+
 syntax on
-"set termguicolors
 colorscheme nord
 set listchars=tab:▸\ ,eol:¬
 
