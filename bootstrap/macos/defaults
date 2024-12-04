@@ -11,9 +11,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
-
-# Put the Dock on the left of the screen
-defaults write com.apple.dock "orientation" -string "left" && killall Dock
 defaults write com.apple.dock "tilesize" -int "36" && killall Dock
 defaults write com.apple.dock "autohide" -bool "false" && killall Dock
 defaults write com.apple.dock "autohide-time-modifier" -float "0" && killall Dock
@@ -26,6 +23,9 @@ sudo pmset -a standbydelay 86400
 
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
+
+# Choose whether to enable moving focus with Tab and Shift Tab.
+defaults write NSGlobalDomain AppleKeyboardUIMode -int "2"
 
 # Automatically quit printer app once the print jobs complete
 defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -40,11 +40,11 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
 
+# No Acceleration
+defaults write NSGlobalDomain com.apple.mouse.linear -bool "true"
+
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
-# Stop iTunes from responding to the keyboard media keys
-#launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
 
 ###############################################################################
 # Screen                                                                      #
