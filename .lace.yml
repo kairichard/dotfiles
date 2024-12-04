@@ -18,29 +18,16 @@ desktop: &desktop
   - config/**/*
   - gnupg/**/*
 
-vcs: &vcs
-  - gitconfig
-  - hgrc
-
-ruby: &ruby
-  - autotest
-  - rspec
-  - gemrc
-  - irbrc
-  - pryrc
-
 vim_bundles: &vim_bundles
   - <%= @package_path/"bootstrap/vim/update_bundles.sh" %>
 
 powerline: &powerline
   - <%= @package_path/"bootstrap/powerline/install.sh" %>
 
-osx: &osx
+macos: &macos
   config_files:
     - *basic
     - *desktop
-    - *vcs
-    - *ruby
 
   setup:
     - <%= @package_path/"bootstrap/osx/brew" %>
@@ -53,39 +40,5 @@ osx: &osx
     update:
       - *vim_bundles
 
-ubuntu: &ubuntu
-  config_files:
-    - *basic
-    - *vcs
-    - *ruby
-
-  setup:
-    - <%= @package_path/"bootstrap/ubuntu/debian_pkgs.sh" %>
-    - *powerline
-    - *vim_bundles
-
-  post:
-    update:
-      - *vim_bundles
-
-ubuntu-desktop: &ubuntu-desktop
-  config_files:
-    - *basic
-    - *vcs
-    - *ruby
-    - *desktop
-
-  setup:
-    - <%= @package_path/"bootstrap/ubuntu/debian_pkgs.sh" %>
-    - <%= @package_path/"bootstrap/ubuntu-desktop/debian_pkgs.sh" %>
-    - *powerline
-    - *vim_bundles
-
-  post:
-    update:
-      - *vim_bundles
-
 flavors:
-  osx: *osx
-  ubuntu: *ubuntu
-  ubuntu-desktop: *ubuntu-desktop
+  macos: *macos
