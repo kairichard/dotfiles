@@ -13,6 +13,9 @@ base: &basic
   - gitmessage
   - gitconfig
   - macos
+  - zshrc
+  - zshenv
+  - spaceship.zsh
 
 desktop: &desktop
   - gsdrc
@@ -33,7 +36,6 @@ macos: &macos
 
   setup:
     - <%= @package_path/"bootstrap/macos/brew" %>
-    - <%= @package_path/"bootstrap/macos/fonts" %>
     - <%= @package_path/"bootstrap/cmd/tmux" %>
     - *powerline
     - *vim_bundles
