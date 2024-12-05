@@ -17,8 +17,6 @@ call plug#begin('~/.vim/plugged')
 
 " My bundles here:
 " original repos on GitHub
-Plug 'neovim/nvim-lspconfig'
-
 Plug 'AndrewRadev/sideways.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'vim-airline/vim-airline'
@@ -42,57 +40,16 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'luochen1990/rainbow'
 Plug 'arcticicestudio/nord-vim'
 Plug 'mikewadsten/vim-gitwildignore'
-Plug 'numirias/semshi'
 Plug 'moll/vim-bbye'
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-" 9000+ Snippets
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'mfussenegger/nvim-lint'
-
-Plug 'romgrk/nvim-treesitter-context'
-Plug 'simrat39/symbols-outline.nvim'
 
 " lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
 " Need to **configure separately**
 
-Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
-
-Plug 'folke/trouble.nvim'
 
 call plug#end()
-
-lua << EOF
-  require("trouble").setup {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
-EOF
-
-lua << EOF
-local lsp = require "lspconfig"
-local coq = require "coq"
-
-lsp.tsserver.setup{}
-lsp.tsserver.setup(coq.lsp_ensure_capabilities{})
-lsp.pyright.setup{}
-lsp.pyright.setup(coq.lsp_ensure_capabilities{})
-vim.g.coq_settings = {
-  auto_start = true,
-}
-
-require'treesitter-context'.setup{}
-
-EOF
-
 
 filetype plugin indent on     " required!
 
@@ -148,14 +105,6 @@ let mapleader = ' '
 
 let g:jedi#completions_enabled = 0
 let g:deoplete#enable_at_startup = 1
-
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For conceal markers.
 if has('conceal')
