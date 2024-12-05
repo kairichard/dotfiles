@@ -34,7 +34,7 @@
 	gpgsign = true
 	template = /Users/kai/.gitmessage
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /opt/homebrew/bin/gpg
 [log]
 	mailmap = true
 

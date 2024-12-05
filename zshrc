@@ -106,9 +106,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-source $ZSH/oh-my-zsh.sh
 source $(brew --prefix)/opt/spaceship/spaceship.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/oh-my-zsh.sh
 
 # -------- HSTR ---------
 
