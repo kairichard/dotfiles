@@ -109,6 +109,7 @@ eval "$(pyenv init -)"
 source $(brew --prefix)/opt/spaceship/spaceship.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSH/oh-my-zsh.sh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8" 
 
 # -------- HSTR ---------
 
@@ -126,3 +127,4 @@ for file in `ls  $HOME/.cmdline/`; do
   [[ -f $HOME/.cmdline/$file ]] && source $HOME/.cmdline/$file;
 done
 
+autoload -U compinit; compinit -y
