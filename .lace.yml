@@ -2,6 +2,7 @@
 homepage: https://github.com/kairichard/dotfiles/
 version: 1.0
 base: &basic
+  - aerospace.toml
   - ackrc
   - ripgreprc
   - cmdline
