@@ -6,6 +6,10 @@ return function()
   local red = vim.g.terminal_color_1
   local yellow = vim.g.terminal_color_3
 
+  vim.keymap.set('n', '<leader>bp', function()
+    require('cokeline.mappings').pick 'focus'
+  end, { desc = 'Pick a buffer to focus' })
+
   require('cokeline').setup {
     default_hl = {
       fg = function(buffer)
