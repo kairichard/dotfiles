@@ -20,9 +20,10 @@ SPACESHIP_PROMPT_ORDER=(
   julia         # Julia section
   docker        # Docker section
   aws           # Amazon Web Services section
-  # venv          # virtualenv section
+  venv          # virtualenv section
   conda         # conda virtualenv section
-  # pyenv         # Pyenv section
+  python         # Pyenv section
+  pyenv
   dotnet        # .NET section
   # ember         # Ember.js section
   exec_time     # Execution time
