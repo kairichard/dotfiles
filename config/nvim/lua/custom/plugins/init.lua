@@ -3,11 +3,22 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  'willothy/nvim-cokeline',
-  dependencies = {
-    'nvim-lua/plenary.nvim', -- Required for v0.4.0+
-    'nvim-tree/nvim-web-devicons', -- If you want devicons
-    'stevearc/resession.nvim', -- Optional, for persistent history
-  },
-  config = require('custom.plugins.config.cokeline'),
+  require 'custom.plugins.config.cokeline',
+  require 'custom.plugins.config.noice',
+  require 'custom.plugins.config.blink',
+  require 'custom.plugins.config.gitsigns',
+  require 'custom.plugins.config.whichkey',
+  require 'custom.plugins.config.telescope',
+  require 'custom.plugins.config.nvimlspconfig',
+  require 'custom.plugins.config.conform',
+  require 'custom.plugins.config.copilot',
+  require 'custom.plugins.config.codecompanion',
+  require 'custom.plugins.config.neotree',
+  require 'custom.plugins.config.todocomments',
+  require 'custom.plugins.config.hlchunks',
+  require 'custom.plugins.config.minivim',
+  require 'custom.plugins.config.snacks',
+  require 'custom.plugins.config.treesitter',
+  require 'custom.plugins.config.indent_line',
+  require 'custom.plugins.config.autopairs',
 }
