@@ -12,7 +12,7 @@ after-login-command = []
 after-startup-command = [
     # JankyBorders has a built-in detection of already running process,
     # so it won't be run twice on AeroSpace restart
-    'exec-and-forget b orders active_color=0xff88c0c0 inactive_color=0xff2e3440 width=10.0'
+    'exec-and-forget borders active_color=0xff88c0c0 inactive_color=0xff2e3440 width=10.0'
 ]
 # Start AeroSpace at login
 start-at-login = true
@@ -63,7 +63,7 @@ inner.horizontal = 15
 inner.vertical =   15
 outer.left =       15
 outer.bottom =     15
-outer.top =        60
+outer.top =        [{monitor.main = 60 }, {monitor."Retina" = 15}, 60]
 outer.right =      15
 
 # 'main' binding mode declaration
@@ -71,7 +71,6 @@ outer.right =      15
 # 'main' binding mode must be always presented
 # Fallback value (if you omit the key): mode.main.binding = {}
 [mode.main.binding]
-
 # All possible keys:
 # - Letters.        a, b, c, ..., z
 # - Numbers.        0, 1, 2, ..., 9
@@ -148,7 +147,7 @@ alt-shift-semicolon = 'mode service'
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
 f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
-backspace = ['close-all-windows-but-current', 'mode main']
+# backspace = ['close-all-windows-but-current', 'mode main']
 
 # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
 #s = ['layout sticky tiling', 'mode main']
@@ -161,3 +160,25 @@ alt-shift-l = ['join-with right', 'mode main']
 down = 'volume down'
 up = 'volume up'
 shift-down = ['volume set 0', 'mode main']
+
+ 	
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Preview'
+check-further-callbacks = true
+run = 'layout floating'  # The callback itself
+
+[[on-window-detected]]
+if.app-id = 'com.apple.FaceTime'
+check-further-callbacks = true
+run = 'layout floating'  # The callback itself
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+check-further-callbacks = true
+run = 'layout floating'  # The callback itself
+
+[[on-window-detected]]
+if.app-id = 'com.apple.ScreenSharing'
+check-further-callbacks = true
+run = 'layout floating'  # The callback itself
