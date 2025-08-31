@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-set -x 
-NAME="spotifyIndicator"
 RUNNING=$(osascript -e 'if application "Spotify" is running then return 0')
 if [ "$RUNNING" == "0" ]; then
   RUNNING=1

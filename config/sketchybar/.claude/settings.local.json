@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/Users/kai/.lace.pkgs/kairichard/config/**)",
+      "Read(/Users/kai/.lace.pkgs/kairichard/**)",
+      "Read(/Users/kai/.lace.pkgs/kairichard/**)",
+      "Read(/Users/kai/.lace.pkgs/kairichard/**)",
+      "Bash(aerospace list-workspaces:*)",
+      "Bash(sketchybar:*)",
+      "Bash(chmod:*)",
+      "Bash(NAME=\"disk_space\" bash plugins/disk_space.sh)",
+      "Bash(NAME=\"vpn_status\" bash plugins/vpn_status.sh)",
+      "Bash(NAME=\"layout_indicator\" bash plugins/layout_indicator.sh)",
+      "Bash(bash:*)",
+      "Bash(NAME=\"cursor_spending\" bash plugins/cursor_spending.sh)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
